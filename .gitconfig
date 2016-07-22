@@ -1,0 +1,54 @@
+[user]
+	name = 심철환
+	email = a@akaiv.com
+	signingkey = 29592CCA
+
+[commit]
+	gpgsign = true
+
+[credential]
+	helper = osxkeychain
+
+[alias]
+	a = add --all .
+	aa = add --all :/
+	br = branch
+	ca = commit --amend
+	ci = commit -a -m
+	cm = commit -m
+	co = checkout
+	dh = diff HEAD
+	fe = fetch --all
+	fd = fetch origin develop:develop
+	l = log --graph
+	re = remote -v
+	rh = reset --hard
+	rs = reset --soft
+	st = status
+
+[core]
+	autocrlf = input
+	pager = less -x4
+	excludesfile = ~/.gitignore_global
+	editor = subl -n -w
+
+[push]
+	default = simple
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = green
+	remote = magenta
+
+[color "status"]
+	untracked = magenta
+
+[format]
+	pretty = format:%C(red)%h%Creset %C(bold)%G?%Creset %C(yellow)%an%Creset %s %C(bold)%ar%Creset %C(bold green)%d%Creset
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
