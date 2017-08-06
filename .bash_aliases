@@ -13,6 +13,8 @@ alias study='cd ~/works/jekyll/study'
 
 # 명령
 alias ll='ls -al'
+alias deploy-dev='yarn build && firebase deploy --project dev'
+alias deploy='REACT_APP_ENV=production yarn build && firebase deploy --project default'
 
 # 애플리케이션
 alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
