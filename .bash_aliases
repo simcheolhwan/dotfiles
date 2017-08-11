@@ -13,6 +13,9 @@ alias study='cd ~/works/jekyll/study'
 
 # 명령
 alias ll='ls -al'
+alias pretty='prettier --single-quote --no-semi --print-width 100 --write src/**/*.{js,jsx,json,css}'
+alias pretty-80='prettier --single-quote --no-semi --print-width 80 --write'
+alias pretty-100='prettier --single-quote --no-semi --print-width 100 --write'
 alias deploy-dev='yarn build && firebase deploy --project dev'
 alias deploy='REACT_APP_ENV=production yarn build && firebase deploy --project default'
 
