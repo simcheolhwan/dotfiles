@@ -30,7 +30,7 @@
 	autocrlf = input
 	pager = less -x4
 	excludesfile = ~/.gitignore_global
-	editor = subl -n -w
+	editor = code --wait
 
 [push]
 	default = simple
