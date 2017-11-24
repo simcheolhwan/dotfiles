@@ -16,15 +16,18 @@
 	ca = commit --amend
 	ci = commit -a -m
 	cm = commit -m
+	cn = commit --amend --no-edit
 	co = checkout
 	dh = diff HEAD
-	fe = fetch --all
 	fd = fetch origin develop:develop
+	fe = fetch --all
 	l = log --graph
 	re = remote -v
 	rh = reset --hard
 	rs = reset --soft
 	st = status
+	start = checkout -b
+	finish = merge --no-ff
 
 [core]
 	autocrlf = input
