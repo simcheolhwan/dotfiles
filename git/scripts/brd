@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+    echo "Usage: brd branch_name"
+    exit
+fi
+
+git branch -D $1
+git push origin :$1

@@ -1,13 +1,31 @@
-# 경로
-alias study='cd ~/works/jekyll/study'
+alias dot="code $DOTFILES"
 
-# 명령
-alias ll='ls -al'
-alias pretty='prettier --single-quote --no-semi --write src/{,**,**/**}/*.{js,jsx,json,css}'
-alias deploy-dev='yarn build && firebase deploy --project dev'
-alias deploy='REACT_APP_ENV=production yarn build && firebase deploy --project default'
-alias canary='open /Applications/Google\ Chrome\ Canary.app/ --args --disable-web-security --user-data-dir'
+# 시스템
+alias brew-u="brew update && brew upgrade && brew cleanup && brew doctor"
 
-# 애플리케이션
-alias sub='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias stree='/Applications/SourceTree.app/Contents/Resources/stree'
+# 브라우저
+export CHROME="/Applications/Google\ Chrome.app/"
+export CANARY="/Applications/Google\ Chrome\ Canary.app/"
+export OPTIONS="--args --disable-web-security --user-data-dir --ignore-certificate-errors"
+alias chrome="open $CHROME $OPTIONS"
+alias canary="open $CANARY $OPTIONS"
+
+# 응용 프로그램
+alias stree="/Applications/SourceTree.app/Contents/Resources/stree"
+
+# Firebase 배포
+alias deploy-dev="REACT_APP_ENV=development yarn build && firebase deploy --project development"
+alias deploy="REACT_APP_ENV=production yarn build && firebase deploy --project production"
+
+# Git user
+alias akaiv="git config user.name 심철환; git config user.email a@akaiv.com"
+alias terra="git config user.name sim; git config user.email sim@terra.money"
+alias kernel="git config user.name sim; git config user.email sim@kernellabs.co"
+
+# PATH
+export SBIN="/usr/local/sbin"
+export GOBIN="~/go/bin"
+export VSCODEPATH="/Applications/Visual Studio Code.app"
+export VSCODEBIN=$VSCODEPATH/Contents/Resources/app/bin
+export GITSCRIPTS=$DOTFILES/git/scripts
+export PATH=$SBIN:$GOBIN:$VSCODEBIN:$GITSCRIPTS:$PATH
