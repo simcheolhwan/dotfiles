@@ -21,6 +21,7 @@ alias deploy="REACT_APP_ENV=production yarn build && firebase deploy --project p
 alias akaiv="git config user.name 심철환; git config user.email a@akaiv.com"
 alias terra="git config user.name sim; git config user.email sim@terra.money"
 alias kernel="git config user.name sim; git config user.email sim@kernellabs.co"
+alias initia="git config user.name noob; git config user.email noob@initia.co"
 
 # PATH
 export SBIN="/usr/local/sbin"
