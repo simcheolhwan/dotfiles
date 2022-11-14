@@ -1,0 +1,17 @@
+alias dot="code $DOTFILES"
+alias brew-u="brew update && brew upgrade && brew cleanup && brew doctor"
+alias stree=fork
+
+# Git users
+alias sim="git config user.name sim; git config user.email i@simcheolhwan.com"
+alias akaiv="git config user.name 심철환; git config user.email a@akaiv.com"
+alias terra="git config user.name sim; git config user.email sim@terra.money"
+alias kernel="git config user.name sim; git config user.email sim@kernellabs.co"
+alias noob="git config user.name noob; git config user.email noob@initia.co"
+
+export SBIN="/usr/local/sbin"
+export GOBIN="~/go/bin"
+export VSCODEPATH="/Applications/Visual Studio Code.app"
+export VSCODEBIN=$VSCODEPATH/Contents/Resources/app/bin
+export GITSCRIPTS=$DOTFILES/git/scripts
+export PATH=$SBIN:$GOBIN:$VSCODEBIN:$GITSCRIPTS:$PATH

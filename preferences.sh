@@ -1,9 +1,7 @@
-defaults write com.apple.finder QuitMenuItem -bool true # 파인더 종료
 defaults write com.apple.screencapture disable-shadow -bool true # 스크린샷 그림자 제거
 defaults write com.apple.screencapture location ~/Downloads # 스크린샷 경로 변경
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true # 파일 저장 상자를 언제나 확장 상태로 열기
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false # 클라우드에 새 문서 저장 (비활성화)
-defaults write com.apple.LaunchServices LSQuarantine -bool false # 애플리케이션 열기 확인 (비활성화)
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true # .DS_Store 파일을 네트워크에서 생성하지 않기
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true # .DS_Store 파일을 USB에서 생성하지 않기
 defaults write com.apple.dock persistent-apps -array # Dock에서 모든 앱 아이콘 제거
@@ -18,8 +16,8 @@ defaults write com.apple.dock show-recents -bool false # Dock에서 최근 사�
 defaults write com.apple.dock mru-spaces -bool false # Spaces를 최근 사용 내역에 따라 자동으로 재정렬 (비활성화)
 
 # 보안 및 개인 정보 보호
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+defaults write com.apple.screensaver askForPassword -int 1 # 화면보호기 비밀번호 묻기
+defaults write com.apple.screensaver askForPasswordDelay -int 0 # 화면보호기 비밀번호 즉시 묻기
 
 # 키보드 > 텍스트
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false # 맞춤법 자동 수정 (비활성화)
@@ -65,7 +63,6 @@ defaults write com.apple.TextEdit SmartCopyPaste -bool false
 
 # iTerm2
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-defaults write com.googlecode.iterm2 QuitWhenAllWindowsClosed -bool true
 defaults write com.googlecode.iterm2 HideActivityIndicator -bool true
 defaults write com.googlecode.iterm2 HideTabNumber -bool true
 defaults write com.googlecode.iterm2 ShowNewOutputIndicator -bool false

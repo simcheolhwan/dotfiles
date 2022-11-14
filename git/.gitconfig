@@ -1,10 +1,8 @@
-[credential]
-	helper = osxkeychain
-
 [alias]
 	a = add --all .
 	aa = add --all :/
 	br = branch
+	c = commit
 	ca = commit --amend
 	ci = commit -a -m
 	cm = commit -m
@@ -22,21 +20,6 @@
 	start = checkout -b
 	finish = merge --no-ff
 
-[core]
-	autocrlf = input
-	editor = code --wait
-	excludesfile = ~/.gitignore_global
-	pager = less -x4
-	precomposeunicode = true
-	quotepath = false
-	ignorecase = false
-
-[init]
-	defaultBranch = main
-
-[push]
-	default = simple
-
 [color]
 	ui = true
 
@@ -47,13 +30,17 @@
 [color "status"]
 	untracked = magenta
 
-[format]
-	pretty = format:%C(red)%h%Creset %C(bold)%G?%Creset %C(yellow)%an%Creset %s %C(bold)%ar%Creset %C(bold green)%d%Creset
+[core]
+	autocrlf = input
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+	pager = less -x4
+	precomposeunicode = true
+	quotepath = false
+	ignorecase = false
 
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+[credential]
+	helper = osxkeychain
 
 [diff]
 	tool = default-difftool
@@ -61,5 +48,19 @@
 [difftool "default-difftool"]
 	cmd = code --wait --diff $LOCAL $REMOTE
 
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[format]
+	pretty = format:%C(red)%h%Creset %C(bold)%G?%Creset %C(yellow)%an%Creset %s %C(bold)%ar%Creset %C(bold green)%d%Creset
+
+[init]
+	defaultBranch = main
+
 [pull]
 	rebase = true
+
+[push]
+	default = simple
