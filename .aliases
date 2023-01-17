@@ -3,7 +3,7 @@ alias brew-u="brew update && brew upgrade && brew cleanup && brew doctor"
 alias stree=fork
 
 # Git users
-alias unset="git config --unset user.name; git config --unset user.email"
+alias unset-user="git config --unset user.name; git config --unset user.email"
 
 export SBIN="/usr/local/sbin"
 export GOBIN="~/go/bin"
