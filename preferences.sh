@@ -56,7 +56,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false # 확
 defaults write com.apple.finder WarnOnEmptyTrash -bool false # 휴지통을 비우기 전에 경고 표시 (비활성화)
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv" # 항상 계층 보기로 열기
 defaults write com.apple.finder _FXSortFoldersFirst -bool true # 폴더를 항상 위에
-defaults write com.apple.universalaccess showWindowTitlebarIcons -bool true # 타이틀바에 아이콘 표시
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true # 모든 파일 확장자 보기
 
 # TextEdit
