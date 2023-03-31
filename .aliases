@@ -1,5 +1,5 @@
 alias dot="code $DOTFILES"
-alias brew-u="brew update && brew upgrade && brew cleanup && brew doctor"
+alias brew-u="brew update && brew upgrade --greedy && brew cleanup && brew doctor"
 alias stree=fork
 
 # Git users
