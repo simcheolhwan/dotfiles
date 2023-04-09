@@ -1,5 +1,6 @@
 alias dot="code $DOTFILES"
 alias bu="brew upgrade --greedy && brew cleanup && brew doctor"
+alias u="omz update && bu"
 
 # Git users
 alias unset-user="git config --unset user.name; git config --unset user.email"
