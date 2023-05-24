@@ -1,3 +1,4 @@
+alias code="code-insiders"
 alias dot="code $DOTFILES"
 alias bu="brew upgrade --greedy && brew cleanup && brew doctor"
 alias u="omz update && bu"
