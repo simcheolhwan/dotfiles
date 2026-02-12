@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 DOTFILES="$HOME/dotfiles"
 
@@ -71,10 +70,11 @@ echo ""
 
 # 7. VS Code 확장 설치
 echo "💻 [7/9] VS Code 확장 설치"
+CODE_CMD="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
 EXTENSIONS_FILE="$DOTFILES/vscode/extensions.txt"
 while IFS= read -r extension; do
   [ -z "$extension" ] && continue
-  code --install-extension "$extension" --force
+  "$CODE_CMD" --install-extension "$extension" --force
 done < "$EXTENSIONS_FILE"
 echo "  VS Code 확장 설치 완료"
 echo ""
