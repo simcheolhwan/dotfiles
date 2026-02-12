@@ -6,8 +6,6 @@ brew "tree"
 brew "gh"
 brew "cloc"
 brew "duti"
-brew "mas"
-
 
 # 앱
 cask "cloudflare-warp"
@@ -20,11 +18,9 @@ cask "dropbox"
 cask "1password"
 cask "vlc"
 cask "figma"
+cask "moom"
+cask "slack"
+cask "telegram"
 
 # 폰트
 cask "font-source-code-pro"
-
-# Mac App Store
-mas "Moom", id: 419330170
-mas "Slack", id: 803453959
-mas "Telegram", id: 747648890
