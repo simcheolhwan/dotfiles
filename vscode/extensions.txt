@@ -1,0 +1,9 @@
+compulim.compulim-vscode-closetag
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+github.copilot-chat
+github.github-vscode-theme
+ms-ceintl.vscode-language-pack-ko
+tyriar.sort-lines
+vscode-icons-team.vscode-icons
+wmaurer.change-case

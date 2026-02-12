@@ -1,0 +1,66 @@
+[alias]
+	a = add --all .
+	aa = add --all :/
+	br = branch
+	ca = commit --amend
+	cm = commit -m
+	cn = commit --amend --no-edit
+	co = checkout
+	fe = fetch --all --prune
+	re = remote -v
+	rh = reset --hard
+	rs = reset --soft
+	st = status
+	start = checkout -b
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = green
+	remote = magenta
+
+[color "status"]
+	untracked = magenta
+
+[core]
+	autocrlf = input
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+	pager = less -x4
+	precomposeunicode = true
+	quotepath = false
+	ignorecase = false
+
+[credential]
+	helper = osxkeychain
+
+[diff]
+	tool = default-difftool
+
+[difftool "default-difftool"]
+	cmd = code --wait --diff "$LOCAL" "$REMOTE"
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[format]
+	pretty = format:%C(red)%h%Creset %C(bold)%G?%Creset %C(yellow)%an%Creset %s %C(bold)%ar%Creset %C(bold green)%d%Creset
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+	default = simple
+
+[user]
+	name = sim
+	email = sim@cheolhwan.com
+
+[include]
+	path = ~/.gitconfig.local

@@ -1,0 +1,30 @@
+# 개발 도구
+brew "git"
+brew "pnpm"
+brew "wget"
+brew "tree"
+brew "gh"
+brew "cloc"
+brew "duti"
+brew "mas"
+
+
+# 앱
+cask "cloudflare-warp"
+cask "google-chrome"
+cask "claude-code"
+cask "visual-studio-code"
+cask "iterm2"
+cask "fork"
+cask "dropbox"
+cask "1password"
+cask "vlc"
+cask "figma"
+
+# 폰트
+cask "font-source-code-pro"
+
+# Mac App Store
+mas "Moom", id: 419330170
+mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
