@@ -9,6 +9,10 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false # �
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true # 파일 저장 대화상자 항상 확장
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true # 모든 파일 확장자 표시
 
+# 기본 웹 브라우저
+
+open -a "Google Chrome" --args --make-default-browser # Chrome으로 설정 (확인 대화상자 표시될 수 있음)
+
 # 키보드
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false # 맞춤법 자동 수정 비활성화
@@ -107,9 +111,10 @@ defaults write com.googlecode.iterm2 HideActivityIndicator -bool true # 활동 �
 defaults write com.googlecode.iterm2 HideTabNumber -bool true # 탭 번호 숨기기
 defaults write com.googlecode.iterm2 ShowNewOutputIndicator -bool false # 새 출력 표시기 비활성화
 
-# 제어 센터
-defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true # 블루투스 상태 아이콘 표시
-defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true # 사운드 상태 아이콘 표시
+# 메뉴 막대
+defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true # 블루투스 표시
+defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true # 사운드 항상 표시
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1 # Spotlight 아이콘 숨기기
 
 # 키보드: F키를 표준 기능 키로 사용
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
@@ -137,6 +142,9 @@ defaults write com.apple.Spotlight orderedItems -array \
   '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
   '{"enabled" = 0;"name" = "TIPS";}' \
   '{"enabled" = 0;"name" = "BOOKMARKS";}'
+
+defaults write com.apple.Spotlight SiriSuggestionsEnabled -bool false # 관련 컨텐츠 보기 비활성화
+defaults write com.apple.assistant.support "Search Queries Data Sharing Status" -int 2 # Apple 검색결과 향상 기여 비활성화
 
 # 핫코너: 모두 비활성화
 defaults write com.apple.dock wvous-tl-corner -int 0 # 좌상단
