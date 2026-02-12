@@ -11,7 +11,7 @@ duti -s $VSCODE public.data all
 # 웹 개발 확장자
 EXTENSIONS=(
   # Markup
-  .html .svg
+  .svg
 
   # Styles
   .css
