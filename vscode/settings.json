@@ -30,7 +30,7 @@
   "editor.guides.indentation": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.hover.delay": 1000,
-  "editor.hover.enabled": true,
+  "editor.hover.enabled": "on",
   "editor.inlineSuggest.enabled": true,
   "editor.lineHeight": 24,
   "editor.minimap.enabled": false,
