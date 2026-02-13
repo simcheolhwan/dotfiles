@@ -11,6 +11,7 @@ macOS 개발 환경 설정을 관리하는 dotfiles 저장소. 심볼릭 링크 
 ```bash
 ./install.sh    # 새 기기 전체 설치 (Homebrew → 심볼릭 링크 → oh-my-zsh → nvm → VS Code → macOS 설정)
 ./sync.sh       # 현재 기기 → 저장소 역방향 동기화 (Brewfile, VS Code 확장 목록)
+./doctor.sh     # 설치 상태 점검
 ```
 
 ## 심볼릭 링크 매핑
@@ -32,7 +33,7 @@ macOS 개발 환경 설정을 관리하는 dotfiles 저장소. 심볼릭 링크 
 - **brew/**: `setup.sh`로 Homebrew 설치 후 `Brewfile`로 패키지 일괄 설치. `sync.sh`가 `brew bundle dump`로 역동기화.
 - **claude/**: `~/.claude`로 심볼릭 링크되는 Claude Code 설정. agents, commands, skills, settings.json 포함.
 - **vscode/**: settings.json, keybindings.json은 심볼릭 링크. extensions.txt는 `sync.sh`가 `code --list-extensions`로 갱신.
-- **macos/**: `defaults write` 명령어로 시스템 설정 적용 (트랙패드, Dock, Finder, 키보드 등). `duti.sh`로 파일 확장자별 기본 앱 설정.
+- **macos/**: `defaults write`와 `sudo pmset`으로 시스템 설정 적용 (트랙패드, Dock, Finder, 키보드, 전원 관리 등). `duti.sh`로 파일 확장자별 기본 앱 설정.
 - **iterm2/**: iTerm2 설정 디렉토리 (수동으로 iTerm2에서 경로 지정 필요).
 
 ## 기기별 로컬 설정
@@ -46,7 +47,17 @@ dotfiles에 포함하지 않는 기기별 설정은 로컬 파일로 분리한�
 
 ## 설정 변경 시 참고
 
+- 아래 파일은 서로 참조하므로, 한쪽을 수정하면 나머지도 함께 검토할 것
+
+| 변경 대상 | 함께 검토 |
+|---|---|
+| `install.sh` 설치 단계 | `README.md`, `doctor.sh` |
+| `macos/defaults.sh` | `doctor.sh` |
+| 심볼릭 링크 | `install.sh`, `doctor.sh`, `CLAUDE.md` 매핑 테이블, `README.md` 구조도 |
+| 디렉토리 추가/제거 | `README.md` 구조도, `CLAUDE.md` 아키텍처 |
+
 - 새 설정 파일 추가 시 `install.sh`에 심볼릭 링크 생성 코드를 함께 추가할 것
 - Homebrew 패키지 추가/제거 후 `./sync.sh`로 Brewfile 갱신
 - 셸 별칭은 `zsh/aliases.sh`, 함수는 `zsh/functions.sh`에 추가
 - Git 별칭은 `git/.gitconfig`의 `[alias]` 섹션에 추가
+- 수동 설정 항목 추가/제거 시 `MANUAL.md` 수정 (install.sh가 자동 반영)

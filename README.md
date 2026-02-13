@@ -8,6 +8,7 @@ macOS 개발 환경 설정을 관리하는 저장소. Homebrew 패키지, zsh, G
 ~/dotfiles/
 ├── install.sh              # 전체 설치 스크립트
 ├── sync.sh                 # 역방향 동기화 스크립트
+├── doctor.sh               # 설치 점검 스크립트
 ├── macos/
 │   ├── defaults.sh         # macOS 시스템 설정
 │   └── duti.sh             # 파일 확장자별 기본 앱 설정
@@ -91,25 +92,14 @@ git config --file ~/.gitconfig.local user.name "이름"
 git config --file ~/.gitconfig.local user.email "email@example.com"
 ```
 
-## 설치 후 추가 설정
+## 설치 후 수동 설정
 
-### Claude Code 공식 마켓플레이스
+`install.sh` 완료 후 수동으로 진행해야 할 항목은 [`MANUAL.md`](MANUAL.md)를 참고한다.
 
-`~/.claude/plugins/`가 gitignore 대상이므로 설치 후 공식 마켓플레이스를 다시 추가해야 한다.
+## 설치 점검
+
+`doctor.sh`로 자동 점검하고, 수동 항목은 [`MANUAL.md`](MANUAL.md)를 참고한다.
 
 ```bash
-# Claude Code 내에서 실행
-/plugin marketplace add anthropics/claude-plugins-official
+./doctor.sh
 ```
-
-## 수동 설정이 필요한 항목
-
-### iTerm2
-
-iTerm2의 설정 디렉토리를 `~/dotfiles/iterm2/`로 지정해야 한다:
-
-1. iTerm2 열기
-2. `Settings` → `General` → `Preferences`
-3. "Load preferences from a custom folder or URL" 체크
-4. 경로를 `~/dotfiles/iterm2`로 지정
-5. "Save changes" 옵션을 "Automatically"로 설정

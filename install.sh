@@ -96,7 +96,18 @@ echo "============================================"
 echo "✅ dotfiles 설치가 완료되었습니다!"
 echo ""
 echo "다음 작업을 수행해 주세요:"
-echo "  1. 터미널을 재시작하거나 'source ~/.zshrc' 실행"
-echo "  2. iTerm2에서 설정 디렉토리를 ~/dotfiles/iterm2/로 지정"
-echo "  3. 필요 시 git/.gitconfig에 사용자 정보 입력"
+i=1
+while IFS= read -r line; do
+  step="${line#- }"
+  [ "$step" = "$line" ] && continue
+  echo "  $i. $step"
+  ((i++))
+done < "$DOTFILES/MANUAL.md"
 echo "============================================"
+
+echo ""
+read -p "지금 Mac을 재시작하시겠습니까? (y/n) " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  sudo shutdown -r now
+fi

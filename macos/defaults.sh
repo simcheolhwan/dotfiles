@@ -87,6 +87,12 @@ defaults write com.apple.screencapture location ~/Downloads # 저장 경로: 다
 defaults write com.apple.screensaver askForPassword -int 1 # 화면보호기 비밀번호 즉시 요구
 defaults write com.apple.screensaver askForPasswordDelay -int 0 # 비밀번호 요구 딜레이 없음
 
+# 전원 관리
+
+sudo pmset -c displaysleep 60 # 충전 중: 화면 60분 후 꺼짐
+sudo pmset -b displaysleep 15 # 배터리: 화면 15분 후 꺼짐
+sudo pmset -a sleep 0         # 시스템 잠자기 비활성화 (화면이 꺼져도 잠들지 않음)
+
 # 저장소
 
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true # .DS_Store 네트워크 생성 방지
