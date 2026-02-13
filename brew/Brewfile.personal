@@ -1,0 +1,14 @@
+# 개인
+cask "dropbox"
+cask "vlc"
+cask "figma"
+cask "slack"
+cask "telegram"
+cask "discord"
+
+# Mac App Store
+brew "mas"
+mas "Moom Classic", id: 419330170
+mas "Final Cut Pro", id: 424389933
+mas "Compressor", id: 424390742
+mas "카카오톡", id: 869223134

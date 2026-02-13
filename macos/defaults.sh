@@ -1,6 +1,8 @@
 #!/bin/bash
 # macOS 시스템 환경설정
 
+source "$DOTFILES/profile.sh"
+
 echo "⚙️  macOS 기본 설정 적용 중..."
 
 # 시스템 일반
@@ -53,6 +55,7 @@ defaults write com.apple.dock persistent-apps -array # 기본 앱 아이콘 모�
 defaults write com.apple.dock persistent-others -array # 기본 폴더(다운로드 등) 모두 제거
 
 add_dock_app() {
+  [ -d "$1" ] || return
   defaults write com.apple.dock persistent-apps -array-add \
     "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$1</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 }
@@ -89,9 +92,13 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0 # 비밀번호 �
 
 # 전원 관리
 
-sudo pmset -c displaysleep 60 # 충전 중: 화면 60분 후 꺼짐
-sudo pmset -b displaysleep 15 # 배터리: 화면 15분 후 꺼짐
-sudo pmset -a sleep 0         # 시스템 잠자기 비활성화 (화면이 꺼져도 잠들지 않음)
+if is_profile "server"; then
+  sudo pmset -a displaysleep 0 # 화면 꺼짐 비활성화 (VNC 안정성)
+else
+  sudo pmset -a sleep 0         # 시스템 잠자기 비활성화 (화면이 꺼져도 잠들지 않음)
+  sudo pmset -c displaysleep 60 # 충전 중: 화면 60분 후 꺼짐
+  sudo pmset -b displaysleep 15 # 배터리: 화면 15분 후 꺼짐
+fi
 
 # 저장소
 
@@ -99,9 +106,11 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true # .
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true # .DS_Store USB 생성 방지
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true # Time Machine 새 디스크 제안 비활성화
 
-# 소프트웨어 업데이트
+# 소프트웨어 업데이트 (서버는 server.sh에서 비활성화)
 
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1 # 매일 업데이트 확인 (최신 macOS에서 효과 제한적)
+if ! is_profile "server"; then
+  defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1 # 매일 업데이트 확인 (최신 macOS에서 효과 제한적)
+fi
 
 # TextEdit
 

@@ -59,8 +59,7 @@
 	default = simple
 
 [user]
-	name = sim
-	email = sim@cheolhwan.com
+	useConfigOnly = true
 
 [include]
 	path = ~/.gitconfig.local

@@ -44,7 +44,31 @@
 
 ## 개발 환경
 
-- 필요 시 `~/.gitconfig.local`에 사용자 정보 입력
+- ~/.gitconfig.local에 includeIf로 폴더별 Git user 설정
+
+  `useConfigOnly = true`이므로 user 설정 없이 commit하면 에러가 발생한다.
+  `includeIf`를 사용하면 폴더에 따라 개인용/업무용 이메일을 자동으로 분리할 수 있다.
+
+  ```bash
+  # 1. 폴더별 gitconfig 파일 생성
+  git config --file ~/.gitconfig-personal user.name "이름"
+  git config --file ~/.gitconfig-personal user.email "personal@example.com"
+
+  git config --file ~/.gitconfig-work user.name "이름"
+  git config --file ~/.gitconfig-work user.email "work@company.com"
+
+  # 2. ~/.gitconfig.local에 includeIf 설정
+  cat >> ~/.gitconfig.local << 'EOF'
+  [includeIf "gitdir:~/personal/"]
+  	path = ~/.gitconfig-personal
+  [includeIf "gitdir:~/work/"]
+  	path = ~/.gitconfig-work
+  EOF
+  ```
+
+  `~/personal/` 아래 저장소에서는 개인 이메일, `~/work/` 아래에서는 업무 이메일이 자동 적용된다.
+  ⚠️ `gitdir` 경로 끝에 `/`가 없으면 매칭되지 않는다. 반드시 `gitdir:~/path/`처럼 trailing slash를 붙일 것.
+  폴더를 하나만 쓴다면 `includeIf` 없이 직접 설정해도 된다:
 
   ```bash
   git config --file ~/.gitconfig.local user.name "이름"
@@ -59,3 +83,9 @@
   # Claude Code 내에서 실행
   /plugin marketplace add anthropics/claude-plugins-official
   ```
+
+## 서버
+
+- [server] SSH 연결 테스트
+
+- [server] 화면 공유 (VNC) 연결 테스트

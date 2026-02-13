@@ -1,0 +1,6 @@
+# 업무
+cask "dropbox"
+cask "figma"
+cask "slack"
+cask "telegram"
+cask "discord"

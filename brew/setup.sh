@@ -15,7 +15,16 @@ fi
 # 분석 수집 비활성화
 brew analytics off
 
-# Brewfile로 패키지 설치
+# 프로파일 로드
+source "$DOTFILES/profile.sh"
+
+# 공통 Brewfile 설치
 brew bundle --file="$DOTFILES/brew/Brewfile"
+
+# 프로파일별 Brewfile 설치
+PROFILE_BREWFILE="$DOTFILES/brew/Brewfile.$DOTFILES_PROFILE"
+if [ -f "$PROFILE_BREWFILE" ]; then
+  brew bundle --file="$PROFILE_BREWFILE"
+fi
 
 echo "✅ Homebrew 패키지 설치 완료"

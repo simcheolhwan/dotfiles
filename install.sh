@@ -2,7 +2,30 @@
 
 DOTFILES="$HOME/dotfiles"
 
+# --profile 플래그 파싱
+PROFILE=""
+for arg in "$@"; do
+  case "$arg" in
+    --profile=*) PROFILE="${arg#--profile=}" ;;
+  esac
+done
+
+if [ -z "$PROFILE" ]; then
+  echo "프로파일을 선택하세요:"
+  select PROFILE in personal work server; do
+    [ -n "$PROFILE" ] && break
+    echo "올바른 번호를 선택하세요."
+  done
+elif [[ ! "$PROFILE" =~ ^(personal|work|server)$ ]]; then
+  echo "사용법: ./install.sh --profile=personal|work|server"
+  exit 1
+fi
+
+echo "$PROFILE" > "$HOME/.dotfiles-profile"
+source "$DOTFILES/profile.sh"
+
 echo "🚀 dotfiles 설치를 시작합니다..."
+echo "📋 프로파일: $DOTFILES_PROFILE"
 echo ""
 
 # 1. Homebrew 설치 및 패키지 설치
@@ -31,6 +54,13 @@ ln -sf "$DOTFILES/vscode/settings.json" "$VSCODE_DIR/settings.json"
 echo "  VS Code settings.json 연결 완료"
 ln -sf "$DOTFILES/vscode/keybindings.json" "$VSCODE_DIR/keybindings.json"
 echo "  VS Code keybindings.json 연결 완료"
+
+# .gitconfig.local 생성
+GITCONFIG_LOCAL="$HOME/.gitconfig.local"
+if [ ! -f "$GITCONFIG_LOCAL" ]; then
+  touch "$GITCONFIG_LOCAL"
+  echo "  ⚠️  ~/.gitconfig.local에 includeIf로 폴더별 Git user 설정 필요 (MANUAL.md 참고)"
+fi
 echo ""
 
 # 3. oh-my-zsh 설치
@@ -87,6 +117,10 @@ echo ""
 echo "🍎 [8/9] macOS 설정 적용"
 chmod +x "$DOTFILES/macos/defaults.sh"
 source "$DOTFILES/macos/defaults.sh"
+if is_profile "server"; then
+  chmod +x "$DOTFILES/macos/server.sh"
+  source "$DOTFILES/macos/server.sh"
+fi
 echo ""
 
 # 9. 파일 연결 설정
@@ -104,6 +138,17 @@ i=1
 while IFS= read -r line; do
   step="${line#- }"
   [ "$step" = "$line" ] && continue
+  # 프로파일 태그 처리
+  if [[ "$step" =~ ^\[(!?)([a-z]+)\]\ (.*) ]]; then
+    negate="${BASH_REMATCH[1]}"
+    tag="${BASH_REMATCH[2]}"
+    step="${BASH_REMATCH[3]}"
+    if [ -n "$negate" ]; then
+      [ "$DOTFILES_PROFILE" = "$tag" ] && continue
+    else
+      [ "$DOTFILES_PROFILE" != "$tag" ] && continue
+    fi
+  fi
   echo "  $i. $step"
   ((i++))
 done < "$DOTFILES/MANUAL.md"

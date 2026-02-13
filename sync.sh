@@ -3,13 +3,18 @@
 
 DOTFILES="$HOME/dotfiles"
 
+source "$DOTFILES/profile.sh"
+
 echo "🔄 역방향 동기화를 시작합니다..."
+echo "📋 프로파일: $DOTFILES_PROFILE"
 echo ""
 
 # Homebrew 패키지 목록 동기화
 echo "📦 Homebrew 패키지 목록 동기화 중..."
-brew bundle dump --file="$DOTFILES/brew/Brewfile" --force
-echo "  Brewfile 업데이트 완료"
+PROFILE_BREWFILE="$DOTFILES/brew/Brewfile.$DOTFILES_PROFILE"
+brew bundle dump --file="$PROFILE_BREWFILE" --force
+echo "  $PROFILE_BREWFILE 업데이트 완료"
+echo "  ⚠️  공통 패키지는 brew/Brewfile에 수동 정리 필요"
 echo ""
 
 # VS Code 확장 목록 동기화

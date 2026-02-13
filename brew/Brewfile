@@ -14,12 +14,7 @@ cask "claude-code"
 cask "visual-studio-code"
 cask "iterm2"
 cask "fork"
-cask "dropbox"
 cask "1password"
-cask "vlc"
-cask "figma"
-cask "slack"
-cask "telegram"
 
 # 폰트
 cask "font-source-code-pro"

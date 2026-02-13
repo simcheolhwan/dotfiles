@@ -3,6 +3,8 @@
 
 DOTFILES="$HOME/dotfiles"
 
+source "$DOTFILES/profile.sh"
+
 pass_count=0
 fail_count=0
 
@@ -51,6 +53,7 @@ check_defaults() {
 }
 
 echo "🔍 dotfiles 설치 상태를 점검합니다..."
+echo "📋 프로파일: $DOTFILES_PROFILE"
 
 # Homebrew
 
@@ -62,6 +65,15 @@ if command -v brew &>/dev/null; then
     pass "Brewfile 패키지 모두 설치됨"
   else
     fail "Brewfile 패키지 누락"
+  fi
+
+  PROFILE_BREWFILE="$DOTFILES/brew/Brewfile.$DOTFILES_PROFILE"
+  if [ -f "$PROFILE_BREWFILE" ]; then
+    if brew bundle check --file="$PROFILE_BREWFILE" &>/dev/null; then
+      pass "Brewfile.$DOTFILES_PROFILE 패키지 모두 설치됨"
+    else
+      fail "Brewfile.$DOTFILES_PROFILE 패키지 누락"
+    fi
   fi
 else
   fail "brew 설치되지 않음"
@@ -151,19 +163,26 @@ fi
 
 section "Git"
 
-git_name=$(git config user.name)
-git_email=$(git config user.email)
-
-if [ -n "$git_name" ]; then
-  pass "user.name: $git_name"
+use_config_only=$(git config --global user.useConfigOnly 2>/dev/null)
+if [ "$use_config_only" = "true" ]; then
+  pass "useConfigOnly 활성화"
 else
-  fail "user.name 미설정"
+  fail "useConfigOnly 비활성화"
 fi
 
-if [ -n "$git_email" ]; then
-  pass "user.email: $git_email"
+if [ -f "$HOME/.gitconfig.local" ]; then
+  pass "~/.gitconfig.local 존재"
+
+  # includeIf gitdir trailing slash 검증
+  while IFS= read -r gitdir; do
+    if [[ ! "$gitdir" =~ /\"$ ]]; then
+      dir="${gitdir#*\"gitdir:}"
+      dir="${dir%\"*}"
+      fail "includeIf gitdir에 trailing slash 누락: $dir"
+    fi
+  done < <(grep 'includeIf "gitdir:' "$HOME/.gitconfig.local" 2>/dev/null)
 else
-  fail "user.email 미설정"
+  fail "~/.gitconfig.local 없음"
 fi
 
 # VS Code
@@ -228,9 +247,32 @@ check_pmset() {
   fi
 }
 
-check_pmset displaysleep 60 "AC Power" "충전 중 화면 60분"
-check_pmset displaysleep 15 "Battery Power" "배터리 화면 15분"
-check_pmset sleep 0 "AC Power" "시스템 잠자기 비활성화"
+if is_profile "server"; then
+  disablesleep=$(pmset -g | grep -w disablesleep | awk '{print $2}')
+  if [ "$disablesleep" = "1" ]; then
+    pass "잠자기 방지 활성화"
+  else
+    fail "잠자기 방지 비활성화"
+  fi
+
+  check_pmset womp 1 "AC Power" "Wake on LAN 활성화"
+
+  if sudo systemsetup -getremotelogin 2>/dev/null | grep -q "On"; then
+    pass "SSH 활성화"
+  else
+    fail "SSH 비활성화"
+  fi
+
+  if sudo softwareupdate --schedule 2>/dev/null | grep -qi "off"; then
+    pass "자동 소프트웨어 업데이트 비활성화"
+  else
+    fail "자동 소프트웨어 업데이트 활성화됨"
+  fi
+else
+  check_pmset displaysleep 60 "AC Power" "충전 중 화면 60분"
+  check_pmset displaysleep 15 "Battery Power" "배터리 화면 15분"
+  check_pmset sleep 0 "AC Power" "시스템 잠자기 비활성화"
+fi
 
 # iTerm2
 
