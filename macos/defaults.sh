@@ -50,6 +50,7 @@ defaults write com.apple.dock tilesize -int 60 # 아이콘 크기
 defaults write com.apple.dock show-recents -bool false # 최근 사용한 앱 비활성화
 defaults write com.apple.dock show-suggested -bool false # 제안된 앱 비활성화
 defaults write com.apple.dock persistent-apps -array # 기본 앱 아이콘 모두 제거
+defaults write com.apple.dock persistent-others -array # 기본 폴더(다운로드 등) 모두 제거
 
 add_dock_app() {
   defaults write com.apple.dock persistent-apps -array-add \
