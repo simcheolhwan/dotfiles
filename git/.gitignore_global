@@ -1,4 +1,5 @@
 .DS_Store
 .vscode
+.playwright-mcp
 .credentials.json
 firebase-debug.log
