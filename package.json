@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{json,md,mjs}": "prettier --write"
+  },
+  "devDependencies": {
+    "lint-staged": "^16",
+    "prettier": "^3",
+    "simple-git-hooks": "^2"
+  }
+}

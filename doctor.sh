@@ -135,6 +135,18 @@ else
   fail "Node.js 설치되지 않음"
 fi
 
+if [ -d "$DOTFILES/node_modules/prettier" ]; then
+  pass "Prettier 설치됨"
+else
+  fail "Prettier 미설치 (pnpm install 필요)"
+fi
+
+if [ -f "$DOTFILES/.git/hooks/pre-commit" ]; then
+  pass "Git pre-commit hook 설정됨"
+else
+  fail "Git pre-commit hook 미설정"
+fi
+
 # Git
 
 section "Git"

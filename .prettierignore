@@ -1,0 +1,5 @@
+claude/
+!claude/CLAUDE.md
+!claude/settings.json
+!claude/statusline.mjs
+pnpm-lock.yaml

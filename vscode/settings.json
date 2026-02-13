@@ -20,6 +20,7 @@
   "editor.fontFamily": "Source Code Pro",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
+  "editor.formatOnSave": false,
   "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToReferences",
   "editor.gotoLocation.alternativeReferenceCommand": "editor.action.goToReferences",
   "editor.gotoLocation.multipleDeclarations": "goto",
@@ -75,7 +76,12 @@
   "scm.diffDecorations": "none",
   "scss.hover.documentation": false,
   "scss.hover.references": false,
-  "search.exclude": { "./eslintcache": true, "pnpm-lock.yaml": true, "yarn.lock": true, "package-lock.json": true },
+  "search.exclude": {
+    "./eslintcache": true,
+    "pnpm-lock.yaml": true,
+    "yarn.lock": true,
+    "package-lock.json": true
+  },
   "security.promptForLocalFileProtocolHandling": false,
   "security.workspace.trust.untrustedFiles": "open",
   "svelte.enable-ts-plugin": true,
@@ -102,8 +108,6 @@
   "workbench.editor.restoreViewState": false,
   "workbench.editorAssociations": { "*.svg": "default" },
   "workbench.iconTheme": "vscode-icons",
-  // "workbench.panel.defaultLocation": "right",
   "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": true,
-  "editor.formatOnSave": false
+  "workbench.statusBar.visible": true
 }

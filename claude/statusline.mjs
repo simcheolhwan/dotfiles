@@ -72,7 +72,10 @@ function renderContext() {
     cw.used_percentage != null
       ? cw.used_percentage / 100
       : contextSize > 0
-        ? ((cu.input_tokens || 0) + (cu.cache_creation_input_tokens || 0) + (cu.cache_read_input_tokens || 0)) / contextSize
+        ? ((cu.input_tokens || 0) +
+            (cu.cache_creation_input_tokens || 0) +
+            (cu.cache_read_input_tokens || 0)) /
+          contextSize
         : 0
   const totalUsed = Math.round(ratio * contextSize)
 

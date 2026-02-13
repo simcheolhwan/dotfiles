@@ -37,7 +37,6 @@
   키보드 단축키, 스냅 영역 등 창 관리 설정을 구성한다.
 
 - Fork → Settings에서 환경설정
-
   - **General**: 에디터 폰트 변경
   - **Commit**: Spell Checking 해제, Generate Commit Message with AI 활성화
   - **Git**: Git Instance 경로 확인

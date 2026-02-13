@@ -28,17 +28,20 @@ macOS 개발 환경 설정을 관리하는 저장소. Homebrew 패키지, zsh, G
 │   ├── keybindings.json    # VS Code 키바인딩
 │   └── extensions.txt      # VS Code 확장 목록
 ├── iterm2/                 # iTerm2 설정 디렉토리
-└── claude/                 # Claude Code 설정 (~/.claude로 연결)
+├── claude/                 # Claude Code 설정 (~/.claude로 연결)
+├── .prettierrc             # Prettier 설정
+├── .prettierignore         # Prettier 무시 규칙
+└── package.json            # 개발 도구 (prettier, lint-staged, simple-git-hooks)
 ```
 
-| 디렉토리 | 설명 |
-|-----------|------|
-| `macos/` | 트랙패드, Dock, Finder 등 macOS 시스템 설정 |
-| `zsh/` | oh-my-zsh 기반 셸 설정, 별칭, 함수 |
-| `git/` | Git 전역 설정 |
-| `brew/` | Homebrew 패키지 관리 |
-| `vscode/` | VS Code 설정 및 확장 |
-| `iterm2/` | iTerm2 설정 백업 |
+| 디렉토리  | 설명                                         |
+| --------- | -------------------------------------------- |
+| `macos/`  | 트랙패드, Dock, Finder 등 macOS 시스템 설정  |
+| `zsh/`    | oh-my-zsh 기반 셸 설정, 별칭, 함수           |
+| `git/`    | Git 전역 설정                                |
+| `brew/`   | Homebrew 패키지 관리                         |
+| `vscode/` | VS Code 설정 및 확장                         |
+| `iterm2/` | iTerm2 설정 백업                             |
 | `claude/` | Claude Code 설정 (`~/.claude`로 심볼릭 링크) |
 
 ## 전제조건
@@ -61,7 +64,7 @@ chmod +x install.sh sync.sh
 3. oh-my-zsh 설치
 4. Powerlevel10k 테마 설치
 5. zsh 플러그인 설치 (`zsh-autosuggestions`, `zsh-syntax-highlighting`)
-6. nvm 및 최신 LTS Node.js 설치
+6. nvm 및 최신 LTS Node.js 설치 + Git hooks 설정 (Prettier 자동 포맷팅)
 7. VS Code 확장 설치
 8. macOS 시스템 설정 적용
 9. 파일 연결 설정 (duti로 기본 앱 지정)

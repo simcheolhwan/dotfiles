@@ -16,13 +16,13 @@ macOS 개발 환경 설정을 관리하는 dotfiles 저장소. 심볼릭 링크 
 
 ## 심볼릭 링크 매핑
 
-| 저장소 파일 | 시스템 경로 |
-|---|---|
-| `zsh/.zshrc` | `~/.zshrc` |
-| `git/.gitconfig` | `~/.gitconfig` |
-| `git/.gitignore_global` | `~/.gitignore_global` |
-| `claude/` | `~/.claude` |
-| `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` |
+| 저장소 파일               | 시스템 경로                                                |
+| ------------------------- | ---------------------------------------------------------- |
+| `zsh/.zshrc`              | `~/.zshrc`                                                 |
+| `git/.gitconfig`          | `~/.gitconfig`                                             |
+| `git/.gitignore_global`   | `~/.gitignore_global`                                      |
+| `claude/`                 | `~/.claude`                                                |
+| `vscode/settings.json`    | `~/Library/Application Support/Code/User/settings.json`    |
 | `vscode/keybindings.json` | `~/Library/Application Support/Code/User/keybindings.json` |
 
 ## 아키텍처
@@ -40,21 +40,21 @@ macOS 개발 환경 설정을 관리하는 dotfiles 저장소. 심볼릭 링크 
 
 dotfiles에 포함하지 않는 기기별 설정은 로컬 파일로 분리한다. 해당 파일이 없어도 에러 없이 무시된다.
 
-| 로컬 파일 | 용도 | 로드 위치 |
-|---|---|---|
-| `~/.zshrc.local` | PATH, 환경변수 등 | `zsh/.zshrc` 마지막 |
+| 로컬 파일            | 용도                     | 로드 위치                      |
+| -------------------- | ------------------------ | ------------------------------ |
+| `~/.zshrc.local`     | PATH, 환경변수 등        | `zsh/.zshrc` 마지막            |
 | `~/.gitconfig.local` | user.name, user.email 등 | `git/.gitconfig`의 `[include]` |
 
 ## 설정 변경 시 참고
 
 - 아래 파일은 서로 참조하므로, 한쪽을 수정하면 나머지도 함께 검토할 것
 
-| 변경 대상 | 함께 검토 |
-|---|---|
-| `install.sh` 설치 단계 | `README.md`, `doctor.sh` |
-| `macos/defaults.sh` | `doctor.sh` |
-| 심볼릭 링크 | `install.sh`, `doctor.sh`, `CLAUDE.md` 매핑 테이블, `README.md` 구조도 |
-| 디렉토리 추가/제거 | `README.md` 구조도, `CLAUDE.md` 아키텍처 |
+| 변경 대상              | 함께 검토                                                              |
+| ---------------------- | ---------------------------------------------------------------------- |
+| `install.sh` 설치 단계 | `README.md`, `doctor.sh`                                               |
+| `macos/defaults.sh`    | `doctor.sh`                                                            |
+| 심볼릭 링크            | `install.sh`, `doctor.sh`, `CLAUDE.md` 매핑 테이블, `README.md` 구조도 |
+| 디렉토리 추가/제거     | `README.md` 구조도, `CLAUDE.md` 아키텍처                               |
 
 - 새 설정 파일 추가 시 `install.sh`에 심볼릭 링크 생성 코드를 함께 추가할 것
 - Homebrew 패키지 추가/제거 후 `./sync.sh`로 Brewfile 갱신

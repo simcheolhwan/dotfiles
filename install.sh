@@ -66,6 +66,10 @@ curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST}/install.sh"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm install --lts
 echo "  nvm 및 최신 LTS Node.js 설치 완료"
+
+# Git hooks 설정 (prettier + lint-staged)
+cd "$DOTFILES" && pnpm install
+echo "  Git hooks 설정 완료"
 echo ""
 
 # 7. VS Code 확장 설치
