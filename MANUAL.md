@@ -32,12 +32,12 @@
 
 ## 앱
 
-- Moom Classic 환경설정
+- [!server] Moom Classic 환경설정
 
   키보드 단축키, 스냅 영역 등 창 관리 설정을 구성한다.
 
 - Fork → Settings에서 환경설정
-  - **General**: 에디터 폰트 변경
+  - **General**: 에디터 폰트 변경, 자동으로 업데이트를 다운로드 하기 활성화
   - **Commit**: Spell Checking 해제, Generate Commit Message with AI 활성화
   - **Git**: Git Instance 경로 확인
   - **Integration**: Terminal Client, External Diff/Merge Tool 설정
