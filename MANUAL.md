@@ -20,6 +20,10 @@
 
   `defaults write`로 `FXPreferredViewStyle`을 설정하지만, 기존 폴더에는 `.DS_Store` 설정이 우선한다. "기본값으로 사용"을 클릭하여 전체 폴더에 적용한다.
 
+- 보기 > 그룹 사용을 활성화하고 "응용 프로그램"으로 그루핑 확인
+
+  `defaults write`로 `FXPreferredGroupBy`를 설정하지만, "그룹 사용" 토글은 수동 활성화가 필요하다.
+
 ## 앱
 
 ### Moom Classic
@@ -77,6 +81,16 @@
   ```bash
   # Claude Code 내에서 실행
   /plugin marketplace add anthropics/claude-plugins-official
+  ```
+
+## macOS 설정 재적용
+
+- 첫 설치 후 Dock·소프트웨어 업데이트 설정이 적용되지 않은 경우 재시작 후 재실행
+
+  macOS 첫 로그인 시 시스템 초기화가 일부 설정을 덮어쓸 수 있다. 재시작 후 아래 명령으로 재적용한다.
+
+  ```bash
+  source ~/dotfiles/macos/defaults.sh
   ```
 
 ## 서버

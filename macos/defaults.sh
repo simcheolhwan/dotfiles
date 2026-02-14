@@ -172,6 +172,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0 # 우하단 modifier
 # 적용
 
 killall cfprefsd 2>/dev/null   # 설정 캐시 초기화
+sleep 1                        # cfprefsd 재시작 대기
 killall Dock
 killall Finder
 killall SystemUIServer

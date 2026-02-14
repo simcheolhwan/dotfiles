@@ -146,6 +146,10 @@ source "$DOTFILES/macos/defaults.sh"
 if is_profile "server"; then
   chmod +x "$DOTFILES/macos/server.sh"
   source "$DOTFILES/macos/server.sh"
+  # server.sh의 시스템 수준 설정 반영
+  sudo killall cfprefsd 2>/dev/null
+  sleep 1
+  killall Dock 2>/dev/null
 fi
 echo ""
 
