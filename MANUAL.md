@@ -20,16 +20,6 @@
 
   `defaults write`로 `FXPreferredViewStyle`을 설정하지만, 기존 폴더에는 `.DS_Store` 설정이 우선한다. "기본값으로 사용"을 클릭하여 전체 폴더에 적용한다.
 
-## 터미널
-
-### iTerm2
-
-- 설정 디렉토리를 `~/dotfiles/iterm2/`로 지정
-  1. Settings → General → Preferences
-  2. "Load preferences from a custom folder or URL" 체크
-  3. 경로를 `~/dotfiles/iterm2`로 지정
-  4. "Save changes"를 "Automatically"로 설정
-
 ## 앱
 
 ### Moom Classic

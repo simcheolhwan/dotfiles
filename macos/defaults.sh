@@ -122,6 +122,8 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false # 종료 확인 �
 defaults write com.googlecode.iterm2 HideActivityIndicator -bool true # 활동 표시기 숨기기
 defaults write com.googlecode.iterm2 HideTabNumber -bool true # 탭 번호 숨기기
 defaults write com.googlecode.iterm2 ShowNewOutputIndicator -bool false # 새 출력 표시기 비활성화
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true # 커스텀 설정 로드 활성화
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/iterm2" # 설정 디렉토리
 
 # 메뉴 막대
 defaults -currentHost write com.apple.controlcenter Bluetooth -int 18 # 블루투스 항상 표시
