@@ -2,23 +2,29 @@
 
 ## macOS
 
-- 시스템 설정 → 일반 → 정보에서 컴퓨터 이름 변경
+### 시스템 설정
 
-- 시스템 설정 → 일반 → 공유에서 로컬 호스트 이름 변경 (영문)
+- 일반 → 정보에서 컴퓨터 이름 변경
 
-- Finder → 설정(⌘,) → 사이드바에서 다운로드·홈·외장 디스크만 활성화
+- 일반 → 공유에서 로컬 호스트 이름 변경 (영문)
 
-- 시스템 설정 → 스팟라이트에서 "관련 컨텐츠 보기" 끄기
+- 스팟라이트에서 "관련 컨텐츠 보기" 끄기
 
-- 시스템 설정 → 잠금 화면에서 "화면보호기 시작되거나 화면이 꺼진 후" → "즉시" 선택
+- 잠금 화면에서 "화면보호기 시작되거나 화면이 꺼진 후" → "즉시" 선택
 
-- Finder → 보기 옵션(⌘J)에서 "항상 계층 보기로 열기" 적용
+### Finder
+
+- 설정(⌘,) → 사이드바에서 다운로드·홈·외장 디스크만 활성화
+
+- 보기 옵션(⌘J)에서 "항상 계층 보기로 열기" 적용
 
   `defaults write`로 `FXPreferredViewStyle`을 설정하지만, 기존 폴더에는 `.DS_Store` 설정이 우선한다. "기본값으로 사용"을 클릭하여 전체 폴더에 적용한다.
 
 ## 터미널
 
-- iTerm2에서 설정 디렉토리를 `~/dotfiles/iterm2/`로 지정
+### iTerm2
+
+- 설정 디렉토리를 `~/dotfiles/iterm2/`로 지정
   1. Settings → General → Preferences
   2. "Load preferences from a custom folder or URL" 체크
   3. 경로를 `~/dotfiles/iterm2`로 지정
@@ -26,19 +32,22 @@
 
 ## 앱
 
-- [!server] Moom Classic 환경설정
+### Moom Classic
 
-  키보드 단축키, 스냅 영역 등 창 관리 설정을 구성한다.
+- [!server] 키보드 단축키, 스냅 영역 등 창 관리 설정을 구성한다.
 
-- Fork → Settings에서 환경설정
-  - **General**: 에디터 폰트 변경, 자동으로 업데이트를 다운로드 하기 활성화
-  - **Commit**: Spell Checking 해제, Generate Commit Message with AI 활성화
-  - **Git**: Git Instance 경로 확인
-  - **Integration**: Terminal Client, External Diff/Merge Tool 설정
+### Fork
+
+- **General**: 에디터 폰트 변경, 자동으로 업데이트를 다운로드 하기 활성화
+- **Commit**: Spell Checking 해제, Generate Commit Message with AI 활성화
+- **Git**: Git Instance 경로 확인
+- **Integration**: Terminal Client, External Diff/Merge Tool 설정
 
 ## 개발 환경
 
-- ~/.gitconfig.local에 includeIf로 폴더별 Git user 설정
+### Git user 설정
+
+- ~/.gitconfig.local에 includeIf로 폴더별 설정
 
   `useConfigOnly = true`이므로 user 설정 없이 commit하면 에러가 발생한다.
   `includeIf`를 사용하면 폴더에 따라 개인용/업무용 이메일을 자동으로 분리할 수 있다.
@@ -69,7 +78,9 @@
   git config --file ~/.gitconfig.local user.email "email@example.com"
   ```
 
-- Claude Code에서 공식 마켓플레이스 추가
+### Claude Code 플러그인
+
+- 공식 마켓플레이스 추가
 
   `~/.claude/plugins/`는 gitignore 대상이므로 설치 후 다시 추가해야 한다.
 
@@ -80,6 +91,10 @@
 
 ## 서버
 
-- [server] SSH 연결 테스트
+### SSH
 
-- [server] 화면 공유 (VNC) 연결 테스트
+- [server] 연결 테스트
+
+### 화면 공유
+
+- [server] VNC 연결 테스트
