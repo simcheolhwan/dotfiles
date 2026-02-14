@@ -92,10 +92,11 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0 # 비밀번호 �
 
 # 전원 관리
 
+sudo pmset -a sleep 0 # 시스템 잠자기 비활성화
+
 if is_profile "server"; then
   sudo pmset -a displaysleep 0 # 화면 꺼짐 비활성화 (VNC 안정성)
 else
-  sudo pmset -a sleep 0         # 시스템 잠자기 비활성화 (화면이 꺼져도 잠들지 않음)
   sudo pmset -c displaysleep 60 # 충전 중: 화면 60분 후 꺼짐
   sudo pmset -b displaysleep 15 # 배터리: 화면 15분 후 꺼짐
 fi
@@ -174,6 +175,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0 # 우하단 modifier
 
 # 적용
 
+killall cfprefsd 2>/dev/null   # 설정 캐시 초기화
 killall Dock
 killall Finder
 killall SystemUIServer

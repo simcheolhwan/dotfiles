@@ -228,6 +228,7 @@ fi
 
 check_defaults com.apple.dock mru-spaces 0 "Spaces 자동 재정렬 비활성화"
 check_defaults com.apple.finder FXPreferredViewStyle clmv "Finder 계층 보기"
+check_defaults com.apple.finder FXPreferredGroupBy Application "Finder 그룹화: 응용 프로그램"
 check_defaults com.apple.finder NewWindowTarget PfLo "Finder 새 창: 다운로드"
 check_defaults com.apple.screencapture location "$HOME/Downloads" "스크린샷 저장: 다운로드"
 check_defaults NSGlobalDomain ApplePressAndHoldEnabled 0 "키 반복 활성화"
@@ -256,22 +257,19 @@ check_pmset() {
 }
 
 if is_profile "server"; then
-  disablesleep=$(pmset -g | grep -w disablesleep | awk '{print $2}')
-  if [ "$disablesleep" = "1" ]; then
-    pass "잠자기 방지 활성화"
-  else
-    fail "잠자기 방지 비활성화"
-  fi
+  check_pmset sleep 0 "AC Power" "잠자기 방지 활성화"
+  check_pmset displaysleep 0 "AC Power" "화면 꺼짐 비활성화"
 
   check_pmset womp 1 "AC Power" "Wake on LAN 활성화"
 
-  if sudo systemsetup -getremotelogin 2>/dev/null | grep -q "On"; then
+  if sudo launchctl list com.openssh.sshd &>/dev/null; then
     pass "SSH 활성화"
   else
     fail "SSH 비활성화"
   fi
 
-  if sudo softwareupdate --schedule 2>/dev/null | grep -qi "off"; then
+  auto_update=$(sudo defaults read /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled 2>/dev/null)
+  if [ "$auto_update" = "0" ]; then
     pass "자동 소프트웨어 업데이트 비활성화"
   else
     fail "자동 소프트웨어 업데이트 활성화됨"

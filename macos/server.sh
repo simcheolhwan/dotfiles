@@ -4,7 +4,7 @@
 echo "🖥️  서버 전용 설정 적용 중..."
 
 # SSH 활성화
-sudo systemsetup -setremotelogin on
+sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist 2>/dev/null
 echo "  SSH 활성화 완료"
 
 # 화면 공유 (VNC) 활성화
@@ -21,7 +21,9 @@ sudo pmset -a womp 1
 echo "  Wake on LAN 활성화"
 
 # 자동 소프트웨어 업데이트 비활성화
-sudo softwareupdate --schedule off
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -bool false
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownload -bool false
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates -bool false
 echo "  자동 소프트웨어 업데이트 비활성화 완료"
 
 echo "✅ 서버 설정 적용 완료"
