@@ -85,11 +85,6 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false # 휴지통 비우�
 defaults write com.apple.screencapture disable-shadow -bool true # 그림자 제거
 defaults write com.apple.screencapture location ~/Downloads # 저장 경로: 다운로드
 
-# 보안
-
-defaults write com.apple.screensaver askForPassword -int 1 # 화면보호기 비밀번호 즉시 요구
-defaults write com.apple.screensaver askForPasswordDelay -int 0 # 비밀번호 요구 딜레이 없음
-
 # 전원 관리
 
 sudo pmset -a sleep 0 # 시스템 잠자기 비활성화
@@ -129,8 +124,8 @@ defaults write com.googlecode.iterm2 HideTabNumber -bool true # 탭 번호 숨�
 defaults write com.googlecode.iterm2 ShowNewOutputIndicator -bool false # 새 출력 표시기 비활성화
 
 # 메뉴 막대
-defaults write com.apple.controlcenter "NSStatusItem Visible Bluetooth" -bool true # 블루투스 표시
-defaults write com.apple.controlcenter "NSStatusItem Visible Sound" -bool true # 사운드 항상 표시
+defaults -currentHost write com.apple.controlcenter Bluetooth -int 18 # 블루투스 항상 표시
+defaults -currentHost write com.apple.controlcenter Sound -int 18 # 사운드 항상 표시
 defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1 # Spotlight 아이콘 숨기기
 
 # 키보드: F키를 표준 기능 키로 사용
@@ -160,7 +155,6 @@ defaults write com.apple.Spotlight orderedItems -array \
   '{"enabled" = 0;"name" = "TIPS";}' \
   '{"enabled" = 0;"name" = "BOOKMARKS";}'
 
-defaults write com.apple.Spotlight SiriSuggestionsEnabled -bool false # 관련 컨텐츠 보기 비활성화
 defaults write com.apple.assistant.support "Search Queries Data Sharing Status" -int 2 # Apple 검색결과 향상 기여 비활성화
 
 # 핫코너: 모두 비활성화

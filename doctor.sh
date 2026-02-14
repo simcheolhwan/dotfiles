@@ -236,6 +236,23 @@ check_defaults NSGlobalDomain com.apple.keyboard.fnState 1 "F키 표준 기능 �
 check_defaults com.apple.AppleMultitouchTrackpad Clicking 1 "트랙패드 탭하여 클릭"
 check_defaults com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag 1 "세 손가락 드래그 설정"
 
+check_defaults_currenthost() {
+  local domain="$1"
+  local key="$2"
+  local expected="$3"
+  local label="$4"
+  local actual
+  actual=$(defaults -currentHost read "$domain" "$key" 2>/dev/null)
+  if [ "$actual" = "$expected" ]; then
+    pass "$label"
+  else
+    fail "$label (기대: $expected, 현재: $actual)"
+  fi
+}
+
+check_defaults_currenthost com.apple.controlcenter Bluetooth 18 "메뉴 막대 블루투스 항상 표시"
+check_defaults_currenthost com.apple.controlcenter Sound 18 "메뉴 막대 사운드 항상 표시"
+
 # 전원 관리
 
 section "전원 관리"
