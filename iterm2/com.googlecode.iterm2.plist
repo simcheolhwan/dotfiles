@@ -25,7 +25,7 @@
 	<key>AitermURL</key>
 	<string>https://api.openai.com/v1/responses</string>
 	<key>Default Bookmark Guid</key>
-	<string>EE7A9B03-0C1B-4C4B-B076-93FC8B291CE1</string>
+	<string>F34264A8-8A0B-49EC-B494-41519467535D</string>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>HapticFeedbackForEsc</key>
@@ -891,7 +891,7 @@
 				<real>0.062745098039215685</real>
 			</dict>
 			<key>Guid</key>
-			<string>EE7A9B03-0C1B-4C4B-B076-93FC8B291CE1</string>
+			<string>F34264A8-8A0B-49EC-B494-41519467535D</string>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -1141,7 +1141,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/ai</string>
+			<string>~</string>
 		</dict>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
