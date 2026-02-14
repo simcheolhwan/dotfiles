@@ -212,6 +212,16 @@ else
   fail "VS Code 설치되지 않음"
 fi
 
+# Tailscale
+
+section "Tailscale"
+
+if [ -d "/Applications/Tailscale.app" ]; then
+  pass "Tailscale 설치됨"
+else
+  fail "Tailscale 설치되지 않음"
+fi
+
 # macOS 설정
 
 section "macOS 설정"

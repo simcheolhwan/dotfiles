@@ -8,13 +8,14 @@ brew "cloc"
 brew "duti"
 
 # 앱
-cask "cloudflare-warp"
+# cask "cloudflare-warp"
 cask "google-chrome"
 cask "claude-code"
 cask "visual-studio-code"
 cask "iterm2"
 cask "fork"
 cask "1password"
+cask "tailscale"
 
 # 폰트
 cask "font-source-code-pro"
