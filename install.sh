@@ -65,37 +65,59 @@ echo ""
 
 # 3. oh-my-zsh 설치
 echo "🐚 [3/9] oh-my-zsh 설치"
-RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo "  oh-my-zsh 설치 완료"
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  echo "  oh-my-zsh 설치 완료"
+else
+  echo "  oh-my-zsh 이미 설치됨"
+fi
 echo ""
 
 # 4. Powerlevel10k 설치
 echo "🎨 [4/9] Powerlevel10k 테마 설치"
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 P10K_DIR="$ZSH_CUSTOM/themes/powerlevel10k"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K_DIR"
-echo "  Powerlevel10k 설치 완료"
+if [ ! -d "$P10K_DIR" ]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K_DIR"
+  echo "  Powerlevel10k 설치 완료"
+else
+  echo "  Powerlevel10k 이미 설치됨"
+fi
 echo ""
 
 # 5. zsh 플러그인 설치
 echo "🔌 [5/9] zsh 플러그인 설치"
 PLUGINS_DIR="$ZSH_CUSTOM/plugins"
 
-git clone https://github.com/zsh-users/zsh-autosuggestions "$PLUGINS_DIR/zsh-autosuggestions"
-echo "  zsh-autosuggestions 설치 완료"
+if [ ! -d "$PLUGINS_DIR/zsh-autosuggestions" ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions "$PLUGINS_DIR/zsh-autosuggestions"
+  echo "  zsh-autosuggestions 설치 완료"
+else
+  echo "  zsh-autosuggestions 이미 설치됨"
+fi
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting "$PLUGINS_DIR/zsh-syntax-highlighting"
-echo "  zsh-syntax-highlighting 설치 완료"
+if [ ! -d "$PLUGINS_DIR/zsh-syntax-highlighting" ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting "$PLUGINS_DIR/zsh-syntax-highlighting"
+  echo "  zsh-syntax-highlighting 설치 완료"
+else
+  echo "  zsh-syntax-highlighting 이미 설치됨"
+fi
 echo ""
 
 # 6. nvm 및 Node.js 설치
 echo "📗 [6/9] nvm 및 Node.js 설치"
 export NVM_DIR="$HOME/.nvm"
-NVM_LATEST=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep '"tag_name"' | sed 's/.*"tag_name": "\(.*\)".*/\1/')
-curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST}/install.sh" | bash
+if [ ! -d "$NVM_DIR" ]; then
+  NVM_LATEST=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep '"tag_name"' | sed 's/.*"tag_name": "\(.*\)".*/\1/')
+  curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST}/install.sh" | bash
+fi
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-nvm install --lts
-echo "  nvm 및 최신 LTS Node.js 설치 완료"
+if ! command -v node &>/dev/null; then
+  nvm install --lts
+  echo "  nvm 및 최신 LTS Node.js 설치 완료"
+else
+  echo "  nvm 및 Node.js 이미 설치됨 ($(node --version))"
+fi
 
 # Git hooks 설정 (prettier + lint-staged)
 cd "$DOTFILES" && pnpm install
@@ -106,8 +128,12 @@ echo ""
 echo "💻 [7/9] VS Code 확장 설치"
 CODE_CMD="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
 EXTENSIONS_FILE="$DOTFILES/vscode/extensions.txt"
+installed=$("$CODE_CMD" --list-extensions 2>/dev/null)
 while IFS= read -r extension; do
   [ -z "$extension" ] && continue
+  if echo "$installed" | grep -qi "^${extension}$"; then
+    continue
+  fi
   "$CODE_CMD" --install-extension "$extension" --force
 done < "$EXTENSIONS_FILE"
 echo "  VS Code 확장 설치 완료"

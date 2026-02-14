@@ -4,8 +4,12 @@
 echo "🍺 Homebrew 설정 중..."
 
 # Homebrew 설치
-echo "Homebrew 설치 중..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew &>/dev/null; then
+  echo "Homebrew 설치 중..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "  Homebrew 이미 설치됨"
+fi
 
 # Apple Silicon Mac의 경우 PATH 설정
 if [[ $(uname -m) == "arm64" ]]; then
