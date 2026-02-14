@@ -89,12 +89,8 @@ defaults write com.apple.screencapture location ~/Downloads # 저장 경로: 다
 
 sudo pmset -a sleep 0 # 시스템 잠자기 비활성화
 
-if is_profile "server"; then
-  sudo pmset -a displaysleep 0 # 화면 꺼짐 비활성화 (VNC 안정성)
-else
-  sudo pmset -c displaysleep 60 # 충전 중: 화면 60분 후 꺼짐
-  sudo pmset -b displaysleep 15 # 배터리: 화면 15분 후 꺼짐
-fi
+sudo pmset -c displaysleep 60 # 충전 중: 화면 60분 후 꺼짐
+sudo pmset -b displaysleep 15 # 배터리: 화면 15분 후 꺼짐
 
 # 저장소
 

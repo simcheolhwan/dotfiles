@@ -273,10 +273,11 @@ check_pmset() {
   fi
 }
 
-if is_profile "server"; then
-  check_pmset sleep 0 "AC Power" "잠자기 방지 활성화"
-  check_pmset displaysleep 0 "AC Power" "화면 꺼짐 비활성화"
+check_pmset sleep 0 "AC Power" "시스템 잠자기 비활성화"
+check_pmset displaysleep 60 "AC Power" "충전 중 화면 60분"
+check_pmset displaysleep 15 "Battery Power" "배터리 화면 15분"
 
+if is_profile "server"; then
   check_pmset womp 1 "AC Power" "Wake on LAN 활성화"
 
   if sudo launchctl list com.openssh.sshd &>/dev/null; then
@@ -291,10 +292,6 @@ if is_profile "server"; then
   else
     fail "자동 소프트웨어 업데이트 활성화됨"
   fi
-else
-  check_pmset displaysleep 60 "AC Power" "충전 중 화면 60분"
-  check_pmset displaysleep 15 "Battery Power" "배터리 화면 15분"
-  check_pmset sleep 0 "AC Power" "시스템 잠자기 비활성화"
 fi
 
 # iTerm2
