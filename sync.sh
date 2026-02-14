@@ -13,6 +13,15 @@ echo ""
 echo "📦 Homebrew 패키지 목록 동기화 중..."
 PROFILE_BREWFILE="$DOTFILES/brew/Brewfile.$DOTFILES_PROFILE"
 brew bundle dump --file="$PROFILE_BREWFILE" --force
+
+# personal이면 공통/work 항목 제외
+if is_profile "personal"; then
+  tmp=$(mktemp)
+  grep -v -x -F -f "$DOTFILES/brew/Brewfile" "$PROFILE_BREWFILE" \
+    | grep -v -x -F -f "$DOTFILES/brew/Brewfile.work" > "$tmp"
+  mv "$tmp" "$PROFILE_BREWFILE"
+fi
+
 echo "  $PROFILE_BREWFILE 업데이트 완료"
 echo "  ⚠️  공통 패키지는 brew/Brewfile에 수동 정리 필요"
 echo ""

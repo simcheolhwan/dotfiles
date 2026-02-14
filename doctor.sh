@@ -67,6 +67,14 @@ if command -v brew &>/dev/null; then
     fail "Brewfile 패키지 누락"
   fi
 
+  if is_profile "personal"; then
+    if brew bundle check --file="$DOTFILES/brew/Brewfile.work" &>/dev/null; then
+      pass "Brewfile.work 패키지 모두 설치됨"
+    else
+      fail "Brewfile.work 패키지 누락"
+    fi
+  fi
+
   PROFILE_BREWFILE="$DOTFILES/brew/Brewfile.$DOTFILES_PROFILE"
   if [ -f "$PROFILE_BREWFILE" ]; then
     if brew bundle check --file="$PROFILE_BREWFILE" &>/dev/null; then

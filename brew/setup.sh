@@ -22,6 +22,10 @@ source "$DOTFILES/profile.sh"
 brew bundle --file="$DOTFILES/brew/Brewfile"
 
 # 프로파일별 Brewfile 설치
+if is_profile "personal"; then
+  brew bundle --file="$DOTFILES/brew/Brewfile.work"
+fi
+
 PROFILE_BREWFILE="$DOTFILES/brew/Brewfile.$DOTFILES_PROFILE"
 if [ -f "$PROFILE_BREWFILE" ]; then
   brew bundle --file="$PROFILE_BREWFILE"
