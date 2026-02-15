@@ -1,1 +1,3 @@
+brew "lazygit"
 brew "node"
+brew "tmux"
