@@ -15,7 +15,7 @@ cask "visual-studio-code"
 cask "iterm2"
 cask "fork"
 cask "1password"
-cask "tailscale"
+cask "tailscale-app"
 
 # 폰트
 cask "font-source-code-pro"
