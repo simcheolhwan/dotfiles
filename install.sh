@@ -104,19 +104,24 @@ else
 fi
 echo ""
 
-# 6. nvm 및 Node.js 설치
-echo "📗 [6/9] nvm 및 Node.js 설치"
-export NVM_DIR="$HOME/.nvm"
-if [ ! -d "$NVM_DIR" ]; then
-  NVM_LATEST=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep '"tag_name"' | sed 's/.*"tag_name": "\(.*\)".*/\1/')
-  curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST}/install.sh" | bash
-fi
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-if ! command -v node &>/dev/null; then
-  nvm install --lts
-  echo "  nvm 및 최신 LTS Node.js 설치 완료"
+# 6. Node.js 설치
+if is_profile "server"; then
+  echo "📗 [6/9] Node.js 설치 (Homebrew)"
+  echo "  Homebrew로 Node.js 설치 완료 ($(node --version))"
 else
-  echo "  nvm 및 Node.js 이미 설치됨 ($(node --version))"
+  echo "📗 [6/9] nvm 및 Node.js 설치"
+  export NVM_DIR="$HOME/.nvm"
+  if [ ! -d "$NVM_DIR" ]; then
+    NVM_LATEST=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep '"tag_name"' | sed 's/.*"tag_name": "\(.*\)".*/\1/')
+    curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_LATEST}/install.sh" | bash
+  fi
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  if ! command -v node &>/dev/null; then
+    nvm install --lts
+    echo "  nvm 및 최신 LTS Node.js 설치 완료"
+  else
+    echo "  nvm 및 Node.js 이미 설치됨 ($(node --version))"
+  fi
 fi
 
 # Git hooks 설정 (prettier + lint-staged)

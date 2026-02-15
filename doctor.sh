@@ -140,13 +140,15 @@ fi
 
 section "Node.js"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+if ! is_profile "server"; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-if command -v nvm &>/dev/null; then
-  pass "nvm 설치됨 ($(nvm --version))"
-else
-  fail "nvm 설치되지 않음"
+  if command -v nvm &>/dev/null; then
+    pass "nvm 설치됨 ($(nvm --version))"
+  else
+    fail "nvm 설치되지 않음"
+  fi
 fi
 
 if command -v node &>/dev/null; then
