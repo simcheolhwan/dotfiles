@@ -58,9 +58,10 @@
     "vercel@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
   "teammateMode": "auto",
   "feedbackSurveyState": {
     "lastShownTime": 1754125564302
   },
-  "skipDangerousModePermissionPrompt": true
+  "model": "opus"
 }
