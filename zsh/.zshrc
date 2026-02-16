@@ -14,7 +14,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # 플러그인
 plugins=(
-  z
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -42,6 +41,12 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# fzf
+source <(fzf --zsh)
 
 # Powerlevel10k 설정
 [[ ! -f "$DOTFILES/zsh/p10k.zsh" ]] || source "$DOTFILES/zsh/p10k.zsh"

@@ -6,6 +6,8 @@ brew "tree"
 brew "gh"
 brew "cloc"
 brew "duti"
+brew "zoxide"
+brew "fzf"
 
 # 앱
 # cask "cloudflare-warp"
