@@ -16,9 +16,11 @@
       "WebSearch",
       "Bash(ls:*)",
       "Bash(mkdir:*)",
-      "Bash(node:*)",
-      "Bash(pnpm:*)",
       "Bash(git:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(pnpm:*)",
+      "Bash(npx:*)",
       "mcp__*"
     ],
     "deny": [
@@ -59,10 +61,10 @@
     "vercel@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "fastMode": true,
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "auto",
   "feedbackSurveyState": {
     "lastShownTime": 1754125564302
-  }
+  },
+  "language": "한국어"
 }
