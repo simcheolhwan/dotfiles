@@ -47,6 +47,7 @@
   "editor.snippetSuggestions": "top",
   "editor.stickyScroll.enabled": true,
   "editor.tabSize": 2,
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.wordWrap": "off",
   "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
