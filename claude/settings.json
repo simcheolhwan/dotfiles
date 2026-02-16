@@ -31,6 +31,7 @@
     ],
     "defaultMode": "bypassPermissions"
   },
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.mjs"
@@ -58,10 +59,10 @@
     "vercel@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
+  "fastMode": true,
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "auto",
   "feedbackSurveyState": {
     "lastShownTime": 1754125564302
-  },
-  "model": "opus"
+  }
 }
