@@ -121,6 +121,13 @@ defaults write com.googlecode.iterm2 ShowNewOutputIndicator -bool false # 새 �
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true # 커스텀 설정 로드 활성화
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/iterm2" # 설정 디렉토리
 
+# Moom Classic 설정 복원
+
+if ! is_profile "server" && [ -f "$DOTFILES/moom/com.manytricks.Moom.plist" ]; then
+  defaults import com.manytricks.Moom "$DOTFILES/moom/com.manytricks.Moom.plist"
+  echo "  Moom Classic 설정 복원 완료"
+fi
+
 # 메뉴 막대
 defaults -currentHost write com.apple.controlcenter Bluetooth -int 18 # 블루투스 항상 표시
 defaults -currentHost write com.apple.controlcenter Sound -int 18 # 사운드 항상 표시

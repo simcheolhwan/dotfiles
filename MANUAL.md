@@ -36,7 +36,7 @@
 
 ### Moom Classic
 
-- [!server] 키보드 단축키, 스냅 영역 등 창 관리 설정을 구성한다.
+- [!server] Moom Classic 실행 후 접근성 권한 허용
 
 ### Tailscale
 

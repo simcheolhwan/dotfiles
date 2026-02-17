@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Automatic News Updates: Popped Up Once</key>
+	<true/>
+	<key>Automatic News Updates: Version</key>
+	<integer>7</integer>
+	<key>Custom Controls</key>
+	<array>
+		<dict>
+			<key>Action</key>
+			<integer>-101</integer>
+			<key>Apply to Overlapping Windows</key>
+			<false/>
+			<key>Auto-Trigger</key>
+			<false/>
+			<key>Auto-Trigger Display Count</key>
+			<integer>1</integer>
+			<key>Center Mode</key>
+			<integer>0</integer>
+			<key>Collapsed</key>
+			<true/>
+			<key>Confine to Display</key>
+			<false/>
+			<key>Generic</key>
+			<false/>
+			<key>Identifier</key>
+			<string>EBC1F9C1-5460-4A9E-8103-249BEBC313F0</string>
+			<key>Loop Through Displays</key>
+			<false/>
+			<key>Move Delta</key>
+			<integer>50</integer>
+			<key>Move Delta Unit</key>
+			<integer>0</integer>
+			<key>Move Direction</key>
+			<integer>5</integer>
+			<key>Move to Edge/Corner Direction</key>
+			<integer>5</integer>
+			<key>Relative Frame</key>
+			<string>{{0.16666666666666666, 0.25}, {0.66666666666666663, 0.5}}</string>
+			<key>Resize Anchor</key>
+			<integer>10</integer>
+			<key>Resize Height Unit</key>
+			<integer>0</integer>
+			<key>Resize Proportionally</key>
+			<false/>
+			<key>Resize Size</key>
+			<string>{800, 600}</string>
+			<key>Resize Width Unit</key>
+			<integer>0</integer>
+			<key>Title</key>
+			<string>SAMPLE CUSTOM CONTROLS</string>
+		</dict>
+		<dict>
+			<key>Action</key>
+			<integer>19</integer>
+			<key>Apply to Overlapping Windows</key>
+			<false/>
+			<key>Auto-Trigger</key>
+			<false/>
+			<key>Auto-Trigger Display Count</key>
+			<integer>1</integer>
+			<key>Center Mode</key>
+			<integer>0</integer>
+			<key>Collapsed</key>
+			<false/>
+			<key>Confine to Display</key>
+			<false/>
+			<key>Generic</key>
+			<false/>
+			<key>Hot Key</key>
+			<dict>
+				<key>Identifier</key>
+				<string>625D2045-599A-4582-A3CF-3ABC2514C317</string>
+				<key>Key Code</key>
+				<integer>18</integer>
+				<key>Modifier Flags</key>
+				<integer>256</integer>
+				<key>Visual Representation</key>
+				<string>1</string>
+			</dict>
+			<key>Identifier</key>
+			<string>625D2045-599A-4582-A3CF-3ABC2514C317</string>
+			<key>Loop Through Displays</key>
+			<false/>
+			<key>Move Delta</key>
+			<integer>50</integer>
+			<key>Move Delta Unit</key>
+			<integer>0</integer>
+			<key>Move Direction</key>
+			<integer>5</integer>
+			<key>Move to Edge/Corner Direction</key>
+			<integer>5</integer>
+			<key>Relative Frame</key>
+			<string>{{0, 0}, {0.66666700000000001, 1}}</string>
+			<key>Resize Anchor</key>
+			<integer>10</integer>
+			<key>Resize Height Unit</key>
+			<integer>0</integer>
+			<key>Resize Proportionally</key>
+			<false/>
+			<key>Resize Size</key>
+			<string>{800, 600}</string>
+			<key>Resize Width Unit</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Action</key>
+			<integer>19</integer>
+			<key>Apply to Overlapping Windows</key>
+			<false/>
+			<key>Auto-Trigger</key>
+			<false/>
+			<key>Auto-Trigger Display Count</key>
+			<integer>1</integer>
+			<key>Center Mode</key>
+			<integer>0</integer>
+			<key>Collapsed</key>
+			<false/>
+			<key>Confine to Display</key>
+			<false/>
+			<key>Generic</key>
+			<false/>
+			<key>Hot Key</key>
+			<dict>
+				<key>Identifier</key>
+				<string>5D2FE3B7-1861-4465-AF81-4BE621A5F93C</string>
+				<key>Key Code</key>
+				<integer>19</integer>
+				<key>Modifier Flags</key>
+				<integer>256</integer>
+				<key>Visual Representation</key>
+				<string>2</string>
+			</dict>
+			<key>Identifier</key>
+			<string>5D2FE3B7-1861-4465-AF81-4BE621A5F93C</string>
+			<key>Loop Through Displays</key>
+			<false/>
+			<key>Move Delta</key>
+			<integer>50</integer>
+			<key>Move Delta Unit</key>
+			<integer>0</integer>
+			<key>Move Direction</key>
+			<integer>5</integer>
+			<key>Move to Edge/Corner Direction</key>
+			<integer>5</integer>
+			<key>Relative Frame</key>
+			<string>{{0.66666700000000001, 0}, {0.33333299999999999, 1}}</string>
+			<key>Resize Anchor</key>
+			<integer>10</integer>
+			<key>Resize Height Unit</key>
+			<integer>0</integer>
+			<key>Resize Proportionally</key>
+			<false/>
+			<key>Resize Size</key>
+			<string>{800, 600}</string>
+			<key>Resize Width Unit</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Action</key>
+			<integer>51</integer>
+			<key>Apply to Overlapping Windows</key>
+			<false/>
+			<key>Auto-Trigger</key>
+			<false/>
+			<key>Auto-Trigger Display Count</key>
+			<integer>1</integer>
+			<key>Center Mode</key>
+			<integer>0</integer>
+			<key>Collapsed</key>
+			<false/>
+			<key>Confine to Display</key>
+			<false/>
+			<key>Generic</key>
+			<false/>
+			<key>Identifier</key>
+			<string>8C741E0E-ADA0-4D1C-A385-DB20E700EA9B</string>
+			<key>Loop Through Displays</key>
+			<false/>
+			<key>Move Delta</key>
+			<integer>50</integer>
+			<key>Move Delta Unit</key>
+			<integer>0</integer>
+			<key>Move Direction</key>
+			<integer>5</integer>
+			<key>Move to Edge/Corner Direction</key>
+			<integer>5</integer>
+			<key>Relative Frame</key>
+			<string>{{0.16666666666666666, 0.25}, {0.66666666666666663, 0.5}}</string>
+			<key>Resize Anchor</key>
+			<integer>10</integer>
+			<key>Resize Height Unit</key>
+			<integer>0</integer>
+			<key>Resize Proportionally</key>
+			<false/>
+			<key>Resize Size</key>
+			<string>{800, 600}</string>
+			<key>Resize Width Unit</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>NSToolbar Configuration Preferences (App Store) 3174</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<true/>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+</dict>
+</plist>

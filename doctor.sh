@@ -313,6 +313,18 @@ section "iTerm2"
 check_defaults com.googlecode.iterm2 LoadPrefsFromCustomFolder 1 "커스텀 설정 로드 활성화"
 check_defaults com.googlecode.iterm2 PrefsCustomFolder "$DOTFILES/iterm2" "설정 디렉토리: ~/dotfiles/iterm2"
 
+# Moom Classic
+
+section "Moom Classic"
+
+if ! is_profile "server"; then
+  if defaults read com.manytricks.Moom &>/dev/null; then
+    pass "Moom Classic 설정 존재"
+  else
+    fail "Moom Classic 설정 없음"
+  fi
+fi
+
 # 결과
 
 echo ""

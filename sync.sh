@@ -32,6 +32,16 @@ code --list-extensions > "$DOTFILES/vscode/extensions.txt"
 echo "  extensions.txt 업데이트 완료"
 echo ""
 
+# Moom Classic 설정 동기화 (서버 제외)
+if ! is_profile "server"; then
+  if defaults read com.manytricks.Moom &>/dev/null; then
+    defaults export com.manytricks.Moom "$DOTFILES/moom/com.manytricks.Moom.plist"
+    plutil -convert xml1 "$DOTFILES/moom/com.manytricks.Moom.plist"
+    echo "  Moom Classic 설정 업데이트 완료"
+  fi
+fi
+echo ""
+
 # 변경사항 확인
 echo "============================================"
 echo "✅ 동기화 완료. 변경사항을 확인하세요:"

@@ -33,6 +33,7 @@ macOS 개발 환경 설정을 관리하는 저장소. Homebrew 패키지, zsh, G
 │   ├── keybindings.json    # VS Code 키바인딩
 │   └── extensions.txt      # VS Code 확장 목록
 ├── iterm2/                 # iTerm2 설정 디렉토리
+├── moom/                   # Moom Classic 설정 (defaults export/import)
 ├── claude/                 # Claude Code 설정 (~/.claude로 연결)
 ├── .prettierrc             # Prettier 설정
 ├── .prettierignore         # Prettier 무시 규칙
@@ -47,6 +48,7 @@ macOS 개발 환경 설정을 관리하는 저장소. Homebrew 패키지, zsh, G
 | `brew/`   | Homebrew 패키지 관리 (공통 + 프로파일별)     |
 | `vscode/` | VS Code 설정 및 확장                         |
 | `iterm2/` | iTerm2 설정 백업                             |
+| `moom/`   | Moom Classic 설정 백업                       |
 | `claude/` | Claude Code 설정 (`~/.claude`로 심볼릭 링크) |
 
 ## 전제조건
