@@ -48,6 +48,9 @@ echo "  ~/.gitignore_global → dotfiles/git/.gitignore_global"
 ln -sf "$DOTFILES/claude" "$HOME/.claude"
 echo "  ~/.claude → dotfiles/claude"
 
+ln -sf "$DOTFILES/codex" "$HOME/.codex"
+echo "  ~/.codex → dotfiles/codex"
+
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_DIR"
 ln -sf "$DOTFILES/vscode/settings.json" "$VSCODE_DIR/settings.json"

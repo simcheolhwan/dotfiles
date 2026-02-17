@@ -35,6 +35,7 @@ macOS 개발 환경 설정을 관리하는 저장소. Homebrew 패키지, zsh, G
 ├── iterm2/                 # iTerm2 설정 디렉토리
 ├── moom/                   # Moom Classic 설정 (defaults export/import)
 ├── claude/                 # Claude Code 설정 (~/.claude로 연결)
+├── codex/                  # Codex 설정 (~/.codex로 연결)
 ├── .prettierrc             # Prettier 설정
 ├── .prettierignore         # Prettier 무시 규칙
 └── package.json            # 개발 도구 (prettier, lint-staged, simple-git-hooks)
@@ -50,6 +51,7 @@ macOS 개발 환경 설정을 관리하는 저장소. Homebrew 패키지, zsh, G
 | `iterm2/` | iTerm2 설정 백업                             |
 | `moom/`   | Moom Classic 설정 백업                       |
 | `claude/` | Claude Code 설정 (`~/.claude`로 심볼릭 링크) |
+| `codex/`  | Codex 설정 (`~/.codex`로 심볼릭 링크)        |
 
 ## 전제조건
 

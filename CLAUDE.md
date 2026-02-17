@@ -20,6 +20,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `git/.gitconfig`          | `~/.gitconfig`                                             |
 | `git/.gitignore_global`   | `~/.gitignore_global`                                      |
 | `claude/`                 | `~/.claude`                                                |
+| `codex/`                  | `~/.codex`                                                 |
 | `vscode/settings.json`    | `~/Library/Application Support/Code/User/settings.json`    |
 | `vscode/keybindings.json` | `~/Library/Application Support/Code/User/keybindings.json` |
 

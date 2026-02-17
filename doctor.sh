@@ -100,6 +100,7 @@ check_symlink "$HOME/.zshrc" "$DOTFILES/zsh/.zshrc" "~/.zshrc"
 check_symlink "$HOME/.gitconfig" "$DOTFILES/git/.gitconfig" "~/.gitconfig"
 check_symlink "$HOME/.gitignore_global" "$DOTFILES/git/.gitignore_global" "~/.gitignore_global"
 check_symlink "$HOME/.claude" "$DOTFILES/claude" "~/.claude"
+check_symlink "$HOME/.codex" "$DOTFILES/codex" "~/.codex"
 
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
 check_symlink "$VSCODE_DIR/settings.json" "$DOTFILES/vscode/settings.json" "VS Code settings.json"

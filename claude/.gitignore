@@ -1,6 +1,7 @@
 cache/
 debug/
 file-history/
+ide/
 paste-cache/
 plans/
 plugins/
@@ -14,5 +15,3 @@ telemetry/
 todos/
 
 history.jsonl
-*cache.json
-ide/
