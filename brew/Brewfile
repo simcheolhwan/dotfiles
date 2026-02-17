@@ -12,11 +12,14 @@ brew "fzf"
 # 앱
 # cask "cloudflare-warp"
 cask "google-chrome"
+cask "claude"
 cask "claude-code"
 cask "visual-studio-code"
 cask "iterm2"
 cask "fork"
 cask "1password"
+cask "codex"
+cask "codex-app"
 cask "tailscale-app"
 
 # 폰트
