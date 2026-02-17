@@ -2,6 +2,14 @@
 
 ## macOS
 
+- 첫 설치 후 Dock·소프트웨어 업데이트 설정이 적용되지 않은 경우 재시작 후 재실행
+
+  macOS 첫 로그인 시 시스템 초기화가 일부 설정을 덮어쓸 수 있다. 재시작 후 아래 명령으로 재적용한다.
+
+  ```bash
+  source ~/dotfiles/macos/defaults.sh
+  ```
+
 ### 시스템 설정
 
 - 일반 → 정보에서 컴퓨터 이름 변경
@@ -88,16 +96,6 @@
   ```bash
   # Claude Code 내에서 실행
   /plugin marketplace add anthropics/claude-plugins-official
-  ```
-
-## macOS 설정 재적용
-
-- 첫 설치 후 Dock·소프트웨어 업데이트 설정이 적용되지 않은 경우 재시작 후 재실행
-
-  macOS 첫 로그인 시 시스템 초기화가 일부 설정을 덮어쓸 수 있다. 재시작 후 아래 명령으로 재적용한다.
-
-  ```bash
-  source ~/dotfiles/macos/defaults.sh
   ```
 
 ## 서버

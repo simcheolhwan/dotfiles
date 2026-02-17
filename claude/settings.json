@@ -60,11 +60,11 @@
     "typescript-lsp@claude-plugins-official": true,
     "vercel@claude-plugins-official": true
   },
+  "language": "한국어",
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "teammateMode": "auto",
   "feedbackSurveyState": {
     "lastShownTime": 1754125564302
-  },
-  "language": "한국어"
+  }
 }
