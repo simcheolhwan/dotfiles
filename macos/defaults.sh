@@ -172,6 +172,18 @@ defaults write com.apple.dock wvous-bl-modifier -int 0 # 좌하단 modifier
 defaults write com.apple.dock wvous-br-corner -int 0 # 우하단
 defaults write com.apple.dock wvous-br-modifier -int 0 # 우하단 modifier
 
+# 배경화면: 검정 (잠금 화면도 동일하게 적용됨)
+
+WALLPAPER="/System/Library/Desktop Pictures/Solid Colors/Black.png"
+if [ -f "$WALLPAPER" ]; then
+  osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$WALLPAPER\"" 2>/dev/null
+fi
+
+# 데스크탑 위젯 비활성화 (macOS Sonoma+)
+
+defaults write com.apple.WindowManager StandardHideWidgets -bool true
+defaults write com.apple.WindowManager StageManagerHideWidgets -bool true
+
 # 적용
 
 killall cfprefsd 2>/dev/null   # 설정 캐시 초기화

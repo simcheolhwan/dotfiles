@@ -2,23 +2,20 @@
 
 ## macOS
 
-- 첫 설치 후 Dock·소프트웨어 업데이트 설정이 적용되지 않은 경우 재시작 후 재실행
+### defaults 재적용 (필수)
 
-  macOS 첫 로그인 시 시스템 초기화가 일부 설정을 덮어쓸 수 있다. 재시작 후 아래 명령으로 재적용한다.
+첫 설치 후 재시작하면 macOS 초기화가 Dock 등 일부 설정을 덮어쓴다. 재시작 후 반드시 한 번 더 실행할 것:
 
-  ```bash
-  source ~/dotfiles/macos/defaults.sh
-  ```
+```bash
+source ~/dotfiles/macos/defaults.sh
+```
 
 ### 시스템 설정
 
 - 일반 → 정보에서 컴퓨터 이름 변경
-
 - 일반 → 공유에서 로컬 호스트 이름 변경 (영문)
-
-- 스팟라이트에서 "관련 컨텐츠 보기" 끄기
-
 - 잠금 화면에서 "화면보호기 시작되거나 화면이 꺼진 후" → "즉시" 선택
+- 스팟라이트에서 "관련 컨텐츠 보기" 끄기
 
 ### Finder
 
@@ -34,10 +31,6 @@
 
 ## 앱
 
-### Moom Classic
-
-- [!server] Moom Classic 실행 후 접근성 권한 허용
-
 ### Tailscale
 
 - Tailscale 실행 후 VPN 구성 허용 → 로그인
@@ -45,12 +38,19 @@
   첫 실행 시 "Tailscale이(가) VPN 구성을 추가하려고 합니다" 대화상자에서 허용을 클릭한다.
   이후 로그인하면 네트워크 확장 권한이 자동으로 활성화된다.
 
+- Settings → Launch at login 켜기
+
 ### Fork
 
 - **General**: 에디터 폰트 변경, 자동으로 업데이트를 다운로드 하기 활성화
+- **General**: Custom Repositories에 `~/personal`, `~/work` 폴더 추가
 - **Commit**: Spell Checking 해제, Generate Commit Message with AI 활성화
 - **Git**: Git Instance 경로 확인
 - **Integration**: Terminal Client, External Diff/Merge Tool 설정
+
+### Moom Classic
+
+- [!server] Moom Classic 실행 후 접근성 권한 허용
 
 ## 개발 환경
 
@@ -63,14 +63,16 @@
 
   ```bash
   # 1. 폴더별 gitconfig 파일 생성
-  git config --file ~/.gitconfig-personal user.name "이름"
-  git config --file ~/.gitconfig-personal user.email "personal@example.com"
+  git config --file ~/.gitconfig-personal user.name "Sim Cheolhwan"
+  git config --file ~/.gitconfig-personal user.email "sim@cheolhwan.com"
 
-  git config --file ~/.gitconfig-work user.name "이름"
+  git config --file ~/.gitconfig-work user.name "Sim Cheolhwan"
   git config --file ~/.gitconfig-work user.email "work@company.com"
 
   # 2. ~/.gitconfig.local에 includeIf 설정
   cat >> ~/.gitconfig.local << 'EOF'
+  [includeIf "gitdir:~/dotfiles/"]
+  	path = ~/.gitconfig-personal
   [includeIf "gitdir:~/personal/"]
   	path = ~/.gitconfig-personal
   [includeIf "gitdir:~/work/"]
@@ -78,14 +80,18 @@
   EOF
   ```
 
-  `~/personal/` 아래 저장소에서는 개인 이메일, `~/work/` 아래에서는 업무 이메일이 자동 적용된다.
+  `~/personal/` 및 `~/dotfiles/` 아래 저장소에서는 개인 이메일, `~/work/` 아래에서는 업무 이메일이 자동 적용된다.
   ⚠️ `gitdir` 경로 끝에 `/`가 없으면 매칭되지 않는다. 반드시 `gitdir:~/path/`처럼 trailing slash를 붙일 것.
   폴더를 하나만 쓴다면 `includeIf` 없이 직접 설정해도 된다:
 
   ```bash
-  git config --file ~/.gitconfig.local user.name "이름"
-  git config --file ~/.gitconfig.local user.email "email@example.com"
+  git config --file ~/.gitconfig.local user.name "Sim Cheolhwan"
+  git config --file ~/.gitconfig.local user.email "sim@cheolhwan.com"
   ```
+
+### GitHub CLI
+
+- `gh auth login` 실행
 
 ### Claude Code 플러그인
 
@@ -98,6 +104,10 @@
   /plugin marketplace add anthropics/claude-plugins-official
   ```
 
+- MCP 서버 설정
+
+  플러그인별 MCP 서버 설정은 동기화되지 않으므로 수동으로 구성해야 한다.
+
 ## 서버
 
 ### SSH
@@ -109,8 +119,6 @@
 - [server] 관리 콘솔에서 기기 정리 및 공유 재설정
 
   OS 재설치 후 로그인하면 새 기기로 등록된다. 이전 기기에 걸어둔 공유 설정은 사라지므로, 관리 콘솔에서 다시 Share를 설정하고 이전 기기(오프라인)를 Remove 처리한다.
-
-- [server] Launch Tailscale at login 켜기
 
 ### 화면 공유
 

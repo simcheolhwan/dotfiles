@@ -168,25 +168,8 @@ echo ""
 echo "============================================"
 echo "✅ dotfiles 설치가 완료되었습니다!"
 echo ""
-echo "다음 작업을 수행해 주세요:"
-i=1
-while IFS= read -r line; do
-  step="${line#- }"
-  [ "$step" = "$line" ] && continue
-  # 프로파일 태그 처리
-  if [[ "$step" =~ ^\[(!?)([a-z]+)\]\ (.*) ]]; then
-    negate="${BASH_REMATCH[1]}"
-    tag="${BASH_REMATCH[2]}"
-    step="${BASH_REMATCH[3]}"
-    if [ -n "$negate" ]; then
-      [ "$DOTFILES_PROFILE" = "$tag" ] && continue
-    else
-      [ "$DOTFILES_PROFILE" != "$tag" ] && continue
-    fi
-  fi
-  echo "  $i. $step"
-  ((i++))
-done < "$DOTFILES/MANUAL.md"
+echo "⚠️  수동 설정이 필요합니다. MANUAL.md를 확인하세요:"
+echo "  cat ~/dotfiles/MANUAL.md"
 echo "============================================"
 
 echo ""

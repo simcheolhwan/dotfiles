@@ -3,10 +3,6 @@
 
 echo "🖥️  서버 전용 설정 적용 중..."
 
-# 배경화면 검정색으로 설정 (구분을 위해)
-osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Black.png"'
-echo "  배경화면 검정색 설정 완료"
-
 # Dock 오른쪽에 위치 (구분을 위해)
 defaults write com.apple.dock orientation -string "right"
 echo "  Dock 오른쪽 위치 설정 완료"

@@ -262,6 +262,9 @@ check_defaults_currenthost() {
   fi
 }
 
+check_defaults com.apple.WindowManager StandardHideWidgets 1 "데스크탑 위젯 숨김"
+check_defaults com.apple.WindowManager StageManagerHideWidgets 1 "Stage Manager 위젯 숨김"
+
 check_defaults_currenthost com.apple.controlcenter Bluetooth 18 "메뉴 막대 블루투스 항상 표시"
 check_defaults_currenthost com.apple.controlcenter Sound 18 "메뉴 막대 사운드 항상 표시"
 
