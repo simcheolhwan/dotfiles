@@ -2,7 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Application Mode</key>
+	<integer>2</integer>
 	<key>Automatic News Updates: Popped Up Once</key>
+	<true/>
+	<key>Automatic News Updates: Suppress</key>
 	<true/>
 	<key>Automatic News Updates: Version</key>
 	<integer>7</integer>
@@ -160,7 +164,7 @@
 		</dict>
 		<dict>
 			<key>Action</key>
-			<integer>51</integer>
+			<integer>19</integer>
 			<key>Apply to Overlapping Windows</key>
 			<false/>
 			<key>Auto-Trigger</key>
@@ -175,8 +179,19 @@
 			<false/>
 			<key>Generic</key>
 			<false/>
+			<key>Hot Key</key>
+			<dict>
+				<key>Identifier</key>
+				<string>EDEA3E75-0C2A-488F-A605-78C32F8BC683</string>
+				<key>Key Code</key>
+				<integer>20</integer>
+				<key>Modifier Flags</key>
+				<integer>256</integer>
+				<key>Visual Representation</key>
+				<string>3</string>
+			</dict>
 			<key>Identifier</key>
-			<string>8C741E0E-ADA0-4D1C-A385-DB20E700EA9B</string>
+			<string>EDEA3E75-0C2A-488F-A605-78C32F8BC683</string>
 			<key>Loop Through Displays</key>
 			<false/>
 			<key>Move Delta</key>
@@ -188,7 +203,7 @@
 			<key>Move to Edge/Corner Direction</key>
 			<integer>5</integer>
 			<key>Relative Frame</key>
-			<string>{{0.16666666666666666, 0.25}, {0.66666666666666663, 0.5}}</string>
+			<string>{{0.16666666666666666, 0}, {0.66666666666666663, 1}}</string>
 			<key>Resize Anchor</key>
 			<integer>10</integer>
 			<key>Resize Height Unit</key>
@@ -196,11 +211,30 @@
 			<key>Resize Proportionally</key>
 			<false/>
 			<key>Resize Size</key>
-			<string>{800, 600}</string>
+			<string>{1920, 1050}</string>
 			<key>Resize Width Unit</key>
 			<integer>0</integer>
 		</dict>
 	</array>
+	<key>Dismiss After Filling</key>
+	<true/>
+	<key>Hide Keyboard Controls Logo</key>
+	<true/>
+	<key>Key Control: Arrow: Control</key>
+	<integer>0</integer>
+	<key>Keyboard Controls</key>
+	<dict>
+		<key>Identifier</key>
+		<string>Keyboard Controls</string>
+		<key>Key Code</key>
+		<integer>6</integer>
+		<key>Modifier Flags</key>
+		<integer>393475</integer>
+		<key>Visual Representation</key>
+		<string>⌃⇧Z</string>
+	</dict>
+	<key>Mouse Controls Trigger: Apple: Primary</key>
+	<false/>
 	<key>NSToolbar Configuration Preferences (App Store) 3174</key>
 	<dict>
 		<key>TB Display Mode</key>
@@ -212,5 +246,9 @@
 		<key>TB Size Mode</key>
 		<integer>1</integer>
 	</dict>
+	<key>Show Cheat Sheet</key>
+	<true/>
+	<key>Stealth Mode</key>
+	<true/>
 </dict>
 </plist>
