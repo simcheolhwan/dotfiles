@@ -33,7 +33,6 @@
     ],
     "defaultMode": "bypassPermissions"
   },
-  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.mjs"
