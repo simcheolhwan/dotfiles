@@ -262,6 +262,7 @@ check_defaults NSGlobalDomain ApplePressAndHoldEnabled 0 "키 반복 활성화"
 check_defaults NSGlobalDomain com.apple.keyboard.fnState 1 "F키 표준 기능 키"
 check_defaults com.apple.AppleMultitouchTrackpad Clicking 1 "트랙패드 탭하여 클릭"
 check_defaults com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag 1 "세 손가락 드래그 설정"
+check_defaults com.apple.dock showAppExposeGestureEnabled 1 "App Exposé 활성화"
 
 check_defaults_currenthost() {
   local domain="$1"

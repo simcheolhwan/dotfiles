@@ -44,6 +44,10 @@ defaults -currentHost write .GlobalPreferences com.apple.trackpad.threeFingerHor
 defaults -currentHost write .GlobalPreferences com.apple.trackpad.threeFingerVertSwipeGesture -int 0 # 현재 호스트 세 손가락 수직 스와이프 비활성화
 defaults -currentHost write .GlobalPreferences com.apple.trackpad.threeFingerDragGesture -bool true # 현재 호스트 세 손가락 드래그 활성화
 
+# App Exposé
+
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true # 네 손가락 아래로 쓸어 App Exposé 활성화
+
 # Dock
 
 defaults write com.apple.dock autohide -bool true # 자동 숨기기
