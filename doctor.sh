@@ -83,6 +83,11 @@ if command -v brew &>/dev/null; then
       fail "Brewfile.$DOTFILES_PROFILE 패키지 누락"
     fi
   fi
+  if brew autoupdate status 2>&1 | grep -q "running"; then
+    pass "brew autoupdate 활성화"
+  else
+    fail "brew autoupdate 비활성화"
+  fi
 else
   fail "brew 설치되지 않음"
 fi

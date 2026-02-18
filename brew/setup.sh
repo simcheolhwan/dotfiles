@@ -35,4 +35,7 @@ if [ -f "$PROFILE_BREWFILE" ]; then
   brew bundle --file="$PROFILE_BREWFILE"
 fi
 
+# 자동 업데이트 활성화
+brew autoupdate start
+
 echo "✅ Homebrew 패키지 설치 완료"

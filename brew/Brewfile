@@ -1,3 +1,5 @@
+tap "homebrew/autoupdate"
+
 # 개발 도구
 brew "git"
 brew "pnpm"
