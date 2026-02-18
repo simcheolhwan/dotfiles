@@ -58,6 +58,12 @@
 [push]
 	default = simple
 
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
 [user]
 	useConfigOnly = true
 

@@ -89,6 +89,38 @@ source ~/dotfiles/macos/defaults.sh
   git config --file ~/.gitconfig.local user.email "sim@cheolhwan.com"
   ```
 
+### Git 서명 키 설정
+
+- [!server] SSH 키 생성 (기기마다 새로 생성)
+
+  SSH 키는 기기마다 별도로 생성한다. 기기 분실 시 해당 키만 revoke하면 되고, 개인 키를 기기 간 전송할 필요가 없어 안전하다.
+
+  ```bash
+  ssh-keygen -t ed25519 -C "sim@cheolhwan.com"
+  ```
+
+- [!server] ~/.gitconfig.local에 SSH 서명 키 경로 설정
+
+  `commit.gpgsign = true`이므로 서명 키 설정 없이 commit하면 에러가 발생한다.
+
+  ```bash
+  git config --file ~/.gitconfig.local user.signingKey ~/.ssh/id_ed25519.pub
+  ```
+
+- [!server] GitHub에 SSH 키를 Signing Key로 등록
+
+  ```bash
+  gh ssh-key add ~/.ssh/id_ed25519.pub --type signing
+  ```
+
+- [server] 서버에서는 커밋 서명 비활성화
+
+  서버 계정의 커밋에 개인 서명을 넣지 않으려면 비활성화한다.
+
+  ```bash
+  git config --file ~/.gitconfig.local commit.gpgsign false
+  ```
+
 ### GitHub CLI
 
 - `gh auth login` 실행

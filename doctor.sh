@@ -201,6 +201,15 @@ else
   fail "~/.gitconfig.local 없음"
 fi
 
+if ! is_profile "server"; then
+  signing_key=$(git config --global user.signingKey 2>/dev/null)
+  if [ -n "$signing_key" ]; then
+    pass "서명 키 설정됨"
+  else
+    fail "서명 키 미설정 (MANUAL.md 참고)"
+  fi
+fi
+
 # VS Code
 
 section "VS Code"
