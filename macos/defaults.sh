@@ -175,7 +175,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0 # 우하단 modifier
 # 배경화면: 검정 (잠금 화면도 동일하게 적용됨)
 
 WALLPAPER="/System/Library/Desktop Pictures/Solid Colors/Black.png"
-if [ -f "$WALLPAPER" ]; then
+if [ -z "$SSH_CONNECTION" ] && [ -f "$WALLPAPER" ]; then
   osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$WALLPAPER\"" 2>/dev/null
 fi
 
