@@ -1,9 +1,9 @@
 shell_snapshots/
-skills/
 sqlite/
 tmp/
 vendor_imports/
 
 .codex-global-state.json
+.codex-system-skills.marker
 .personality_migration
 auth.json
