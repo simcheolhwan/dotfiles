@@ -1,3 +1,10 @@
+pnpmreset() {
+  rm -rf **/node_modules(N/)
+  rm -rf pnpm-lock.yaml
+  pnpm store prune
+  pnpm install --no-frozen-lockfile
+}
+
 killport() {
   if [[ $# -eq 0 ]]; then
     echo "Usage: killport <port> [port2] [port3] ..."

@@ -18,6 +18,11 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+# 자동 업데이트
+zstyle ':omz:update' mode auto
+zstyle ':omz:update' frequency 1
+
+# oh-my-zsh 로드
 source $ZSH/oh-my-zsh.sh
 
 # 에디터
