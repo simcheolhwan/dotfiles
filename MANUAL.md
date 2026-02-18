@@ -52,6 +52,35 @@ source ~/dotfiles/macos/defaults.sh
 
 - [!server] Moom Classic 실행 후 접근성 권한 허용
 
+### Slack
+
+- 홈 → 사이드바 → 읽지 않은 항목
+
+### Telegram
+
+- General: Replace emoji automatically, Show call tab, Force touch → Reply
+- Appearance: System, App icon
+
+### Discord
+
+- 데이터 및 개인정보: 모두 끄기
+
+### 카카오톡
+
+- 보안: 잠금 해제 시 Touch ID 사용 켜기
+- 알림: 소리 알림 끄기
+- 채팅: 사진 묶어 보내기
+
+### 1Password
+
+- 일반: 메뉴바 해제, 단축키 제거
+- 스타일: 카테고리 체크
+- 보안: Option 길게 누르기
+
+### VLC
+
+- 인터페이스 어둡게
+
 ## 개발 환경
 
 ### Git user 설정
