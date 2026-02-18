@@ -8,5 +8,4 @@ vendor_imports/
 .codex-system-skills.marker
 .personality_migration
 auth.json
-config.toml
 version.json

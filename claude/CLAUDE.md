@@ -1,2 +1,1 @@
-@GUIDELINES.md
 @VERCEL.md
