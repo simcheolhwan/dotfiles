@@ -1,3 +1,8 @@
+## 스테이징 규칙
+
+- staged 변경사항이 존재하면: staged만 커밋 (unstaged는 무시)
+- staged 변경사항이 없으면: tracked 파일의 모든 변경사항을 `git add`한 후 커밋
+
 ## 커밋 메시지 규칙
 
 - 언어: 최근 커밋 메시지들의 언어를 따를 것 (git log로 확인)
