@@ -24,6 +24,13 @@ fi
 echo "$PROFILE" > "$HOME/.dotfiles-profile"
 source "$DOTFILES/profile.sh"
 
+# sudo 인증 (이후 스크립트 끝까지 재인증 없음)
+echo "🔐 관리자 권한이 필요합니다."
+sudo -v
+while true; do sudo -n true; sleep 50; kill -0 "$$" || exit; done 2>/dev/null &
+SUDO_KEEPALIVE_PID=$!
+trap 'kill $SUDO_KEEPALIVE_PID 2>/dev/null' EXIT
+
 echo "🚀 dotfiles 설치를 시작합니다..."
 echo "📋 프로파일: $DOTFILES_PROFILE"
 echo ""
