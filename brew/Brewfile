@@ -1,7 +1,7 @@
 tap "homebrew/autoupdate"
 
 # 개발 도구
-brew "git"
+# brew "git" # xcode-select로 제공됨
 brew "pnpm"
 brew "wget"
 brew "tree"
@@ -12,7 +12,7 @@ brew "zoxide"
 brew "fzf"
 
 # 앱
-# cask "cloudflare-warp"
+# cask "cloudflare-warp" # Tailscale로 대체
 cask "google-chrome"
 cask "chatgpt"
 cask "claude"
