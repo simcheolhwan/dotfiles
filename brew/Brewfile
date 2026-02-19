@@ -12,7 +12,7 @@ brew "zoxide"
 brew "fzf"
 
 # 앱
-# cask "cloudflare-warp"
+# cask "cloudflare-warp" # Tailscale로 대체
 cask "google-chrome"
 cask "chatgpt"
 cask "claude"
