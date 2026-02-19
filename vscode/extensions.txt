@@ -3,10 +3,10 @@ compulim.compulim-vscode-closetag
 dbaeumer.vscode-eslint
 esbenp.prettier-vscode
 github.copilot-chat
-openai.chatgpt
 github.github-vscode-theme
 ms-ceintl.vscode-language-pack-ko
 ms-vscode-remote.remote-ssh
+openai.chatgpt
 tyriar.sort-lines
 vscode-icons-team.vscode-icons
 wmaurer.change-case

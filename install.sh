@@ -58,6 +58,8 @@ echo "  ~/.claude → dotfiles/claude"
 ln -sf "$DOTFILES/codex" "$HOME/.codex"
 echo "  ~/.codex → dotfiles/codex"
 
+mkdir -p "$HOME/personal" "$HOME/work"
+
 VSCODE_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_DIR"
 ln -sf "$DOTFILES/vscode/settings.json" "$VSCODE_DIR/settings.json"

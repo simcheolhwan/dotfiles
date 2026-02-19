@@ -30,6 +30,10 @@ sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticDownl
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticallyInstallMacOSUpdates -bool false
 echo "  자동 소프트웨어 업데이트 비활성화 완료"
 
+# tmux 클립보드 공유 (SSH 원격 복사 지원)
+grep -qxF 'set -s set-clipboard on' "$HOME/.tmux.conf" 2>/dev/null || echo 'set -s set-clipboard on' >> "$HOME/.tmux.conf"
+echo "  tmux 클립보드 설정 완료"
+
 # Dock 재시작 (orientation 변경 반영)
 killall Dock
 

@@ -15,10 +15,6 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false # �
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true # 파일 저장 대화상자 항상 확장
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true # 모든 파일 확장자 표시
 
-# 기본 웹 브라우저
-
-open -a "Google Chrome" --args --make-default-browser # Chrome으로 설정 (확인 대화상자 표시될 수 있음)
-
 # 키보드
 
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false # 맞춤법 자동 수정 비활성화
