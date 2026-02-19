@@ -5,6 +5,10 @@ source "$DOTFILES/profile.sh"
 
 echo "⚙️  macOS 기본 설정 적용 중..."
 
+# 기존 설정 캐시 초기화 (이전 실행의 stale 캐시 방지)
+killall cfprefsd 2>/dev/null
+sleep 1
+
 # 시스템 일반
 
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false # 클라우드에 새 문서 저장 비활성화
@@ -190,8 +194,6 @@ defaults write com.apple.WindowManager StageManagerHideWidgets -bool true
 
 # 적용
 
-killall cfprefsd 2>/dev/null   # 설정 캐시 초기화
-sleep 1                        # cfprefsd 재시작 대기
 killall Dock
 killall Finder
 killall SystemUIServer

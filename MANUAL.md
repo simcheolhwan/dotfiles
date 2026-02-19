@@ -1,15 +1,5 @@
 # 설치 후 수동 설정
 
-## macOS
-
-### defaults 재적용 (필수)
-
-첫 설치 후 재시작하면 macOS 초기화가 Dock 등 일부 설정을 덮어쓴다. 재시작 후 반드시 한 번 더 실행할 것:
-
-```bash
-source ~/dotfiles/macos/defaults.sh
-```
-
 ### 시스템 설정
 
 - 일반 → 정보에서 컴퓨터 이름 변경
