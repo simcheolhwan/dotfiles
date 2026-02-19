@@ -1,6 +1,7 @@
 tap "homebrew/autoupdate"
 
 # 개발 도구
+# brew "git" # xcode-select로 제공됨
 brew "pnpm"
 brew "wget"
 brew "tree"
