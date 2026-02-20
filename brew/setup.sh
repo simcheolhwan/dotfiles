@@ -36,6 +36,6 @@ if [ -f "$PROFILE_BREWFILE" ]; then
 fi
 
 # 자동 업데이트 활성화
-brew autoupdate start
+brew autoupdate start --upgrade --cleanup
 
 echo "✅ Homebrew 패키지 설치 완료"
