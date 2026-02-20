@@ -71,7 +71,7 @@
 
 ### Telegram
 
-- General: Replace emoji automatically, Show call tab, Force touch → Reply
+- General: Replace emoji automatically, Large emoji, Show call tab, Force touch → Reply
 - Appearance: System, App icon
 
 ### Discord
