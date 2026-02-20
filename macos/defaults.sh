@@ -123,7 +123,7 @@ defaults write com.googlecode.iterm2 HideActivityIndicator -bool true # 활동 �
 defaults write com.googlecode.iterm2 HideTabNumber -bool true # 탭 번호 숨기기
 defaults write com.googlecode.iterm2 ShowNewOutputIndicator -bool false # 새 출력 표시기 비활성화
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true # 커스텀 설정 로드 활성화
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/dotfiles/iterm2" # 설정 디렉토리
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$DOTFILES/iterm2" # 설정 디렉토리
 
 # Moom Classic 설정 복원
 
