@@ -85,7 +85,7 @@ chmod +x install.sh sync.sh doctor.sh
 3. oh-my-zsh 설치
 4. Powerlevel10k 테마 설치
 5. zsh 플러그인 설치 (`zsh-autosuggestions`, `zsh-syntax-highlighting`)
-6. Node.js 설치 (서버: Homebrew, 그 외: nvm + LTS) + Git hooks 설정 (Prettier 자동 포맷팅)
+6. Node.js 설치 (서버: Homebrew, 그 외: nvm + LTS) + Firebase CLI + Git hooks 설정 (Prettier 자동 포맷팅)
 7. VS Code 확장 설치
 8. macOS 시스템 설정 적용 (서버면 SSH/VNC 추가)
 9. 파일 연결 설정 (duti로 기본 앱 지정)

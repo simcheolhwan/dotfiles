@@ -169,6 +169,12 @@ else
   fail "Prettier 미설치 (pnpm install 필요)"
 fi
 
+if command -v firebase &>/dev/null; then
+  pass "Firebase CLI 설치됨 ($(firebase --version))"
+else
+  fail "Firebase CLI 미설치"
+fi
+
 if [ -f "$DOTFILES/.git/hooks/pre-commit" ]; then
   pass "Git pre-commit hook 설정됨"
 else

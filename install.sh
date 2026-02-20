@@ -136,6 +136,14 @@ else
   fi
 fi
 
+# Firebase CLI 설치
+if ! command -v firebase &>/dev/null; then
+  npm install -g firebase-tools
+  echo "  Firebase CLI 설치 완료"
+else
+  echo "  Firebase CLI 이미 설치됨 ($(firebase --version))"
+fi
+
 # Git hooks 설정 (prettier + lint-staged)
 cd "$DOTFILES" && pnpm install
 echo "  Git hooks 설정 완료"

@@ -98,6 +98,10 @@
 
   플러그인별 MCP 서버 설정은 동기화되지 않으므로 수동으로 구성해야 한다.
 
+### Firebase
+
+- `firebase login` — Google 계정 로그인
+
 ### Git user 설정
 
 - ~/.gitconfig.local에 includeIf로 폴더별 설정
