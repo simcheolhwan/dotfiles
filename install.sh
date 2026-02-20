@@ -71,7 +71,7 @@ echo "  VS Code keybindings.json 연결 완료"
 GITCONFIG_LOCAL="$HOME/.gitconfig.local"
 if [ ! -f "$GITCONFIG_LOCAL" ]; then
   touch "$GITCONFIG_LOCAL"
-  echo "  ⚠️  ~/.gitconfig.local에 includeIf로 폴더별 Git user 설정 필요 (MANUAL.md 참고)"
+  echo "  ⚠️  ~/.gitconfig.local에 includeIf로 폴더별 Git user 설정 필요 (README.md 참고)"
 fi
 echo ""
 
@@ -188,8 +188,8 @@ echo ""
 echo "============================================"
 echo "✅ dotfiles 설치가 완료되었습니다!"
 echo ""
-echo "⚠️  수동 설정이 필요합니다. MANUAL.md를 확인하세요:"
-echo "  cat ~/dotfiles/MANUAL.md"
+echo "⚠️  수동 설정이 필요합니다. README.md를 확인하세요:"
+echo "  cat ~/dotfiles/README.md"
 echo "============================================"
 
 echo ""

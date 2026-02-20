@@ -108,7 +108,7 @@ macOS 개발 환경 설정을 관리하는 저장소. Homebrew 패키지, zsh, G
 dotfiles에 포함하지 않는 기기별 설정은 아래 파일에 작성한다. 파일이 없으면 무시된다.
 
 - `~/.zshrc.local` — PATH, 환경변수 등 (`zsh/.zshrc`에서 로드)
-- `~/.gitconfig.local` — Git user 설정, 필수 (`git/.gitconfig`에서 로드, 설정 방법은 [MANUAL.md](MANUAL.md) 참고)
+- `~/.gitconfig.local` — Git user 설정, 필수 (`git/.gitconfig`에서 로드, 설정 방법은 [README.md](README.md) 참고)
 - `~/.dotfiles-profile` — 프로파일 이름 (`install.sh`가 자동 생성, `profile.sh`에서 로드)
 
 ```bash
@@ -143,4 +143,4 @@ git add --all
 - Homebrew 패키지 추가/제거 후 `./sync.sh`로 프로파일별 Brewfile 갱신 (공통 Brewfile은 수동 관리)
 - 셸 별칭은 `zsh/aliases.sh`, 함수는 `zsh/functions.sh`에 추가
 - Git 별칭은 `git/.gitconfig`의 `[alias]` 섹션에 추가
-- 수동 설정 항목 추가/제거 시 `MANUAL.md` 수정 (install.sh가 자동 반영, 프로파일 태그 지원)
+- 수동 설정 항목 추가/제거 시 `README.md` 수정 (install.sh가 자동 반영, 프로파일 태그 지원)
