@@ -59,7 +59,7 @@
   "extensions.ignoreRecommendations": true,
   "files.defaultLanguage": "markdown",
   "files.eol": "\n",
-  "files.exclude": { "**/node_modules": true },
+  "files.exclude": { "**/node_modules": true, "firebase-debug.log": true },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
