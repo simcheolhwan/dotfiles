@@ -61,7 +61,7 @@
 
 - **General**: 에디터 폰트 변경, Custom Repositories에 `~/personal`, `~/work` 폴더 추가
 - **Commit**: Spell Checking 해제, Generate Commit Message with AI 활성화
-- **Git**: Git Instance 경로 확인
+- **Git**: Git Instance 경로 확인, env PATH를 System Shell (`/bin/zsh`)로 변경
 - **Integration**: Terminal Client, External Diff/Merge Tool 설정
 
 ### Moom Classic
