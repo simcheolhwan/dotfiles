@@ -6,4 +6,4 @@
 2. 새 브랜치를 생성하라
 3. 변경사항을 커밋하라
 
-커밋 규칙은 [git-conventions.md](../../references/git-conventions.md)를 따를 것.
+커밋 규칙은 [git-conventions.md](../references/git-conventions.md)를 따를 것.
