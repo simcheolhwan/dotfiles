@@ -27,3 +27,4 @@ cask "tailscale-app"
 
 # 폰트
 cask "font-source-code-pro"
+cask "font-geist-mono"
