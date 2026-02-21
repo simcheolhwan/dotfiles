@@ -74,5 +74,6 @@
   "teammateMode": "auto",
   "feedbackSurveyState": {
     "lastShownTime": 1754125564302
-  }
+  },
+  "model": "opus[1m]"
 }
