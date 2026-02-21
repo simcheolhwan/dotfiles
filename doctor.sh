@@ -357,7 +357,7 @@ echo "=========================================="
 echo -e "  ${green}✓ $pass_count 통과${reset}  ${red}✗ $fail_count 실패${reset}"
 echo "=========================================="
 
-echo "아이콘이 보이나요? ☕ 🤖"
+source "$DOTFILES/macos/emoji.sh"
 
 if [ "$fail_count" -gt 0 ]; then
   exit 1
