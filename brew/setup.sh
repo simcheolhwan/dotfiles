@@ -35,6 +35,10 @@ if [ -f "$PROFILE_BREWFILE" ]; then
   brew bundle --file="$PROFILE_BREWFILE"
 fi
 
+# OpenJDK 시스템 심볼릭 링크
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+echo "  Java 시스템 심볼릭 링크 생성 완료"
+
 # 자동 업데이트 활성화
 brew autoupdate start --upgrade --cleanup
 

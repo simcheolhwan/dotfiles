@@ -269,7 +269,6 @@
 ```
 brew "imagemagick"                # image
 brew "ffmpeg"                     # video
-brew "java"                       # firebase
 
 cask "gcloud-cli"                 # firebase secret
 cask "ngrok"                      # slack bot

@@ -10,6 +10,7 @@ brew "cloc"
 brew "duti"
 brew "zoxide"
 brew "fzf"
+brew "openjdk"
 
 # 앱
 # cask "cloudflare-warp" # Tailscale로 대체
