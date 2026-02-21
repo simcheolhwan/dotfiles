@@ -1,7 +1,7 @@
-claude/
+claude/*
 !claude/CLAUDE.md
 !claude/settings.json
 !claude/statusline.mjs
-codex/
+codex/*
 !codex/config.toml
 pnpm-lock.yaml
