@@ -38,5 +38,10 @@
 
 ## Coding Agent
 
+- NEVER use the `any` type in TypeScript. Use `unknown`, generics, or precise types instead.
+- Prefer declarative, functional patterns (`map`, `filter`, `reduce`) over imperative loops. Favor immutability and pure functions.
+- Use early returns to reduce nesting depth.
+- Write descriptive names that make comments unnecessary.
+- Co-locate tests with pure functions in the same directory.
 - `git push` is blocked. When a push is appropriate, prompt the user to push manually.
 - When writing new code, identify and follow existing patterns and libraries in the project first. Propose to the user before introducing new dependencies or patterns.
