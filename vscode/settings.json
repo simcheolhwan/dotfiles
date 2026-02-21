@@ -109,5 +109,11 @@
   "workbench.editorAssociations": { "*.svg": "default" },
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      { "scope": ["punctuation.definition.bold.markdown"], "settings": { "foreground": "#484f58" } },
+      { "scope": "punctuation.definition.heading.markdown", "settings": { "foreground": "#4a8ed0" } }
+    ]
+  }
 }
