@@ -1,4 +1,5 @@
 log/
+sessions/
 shell_snapshots/
 sqlite/
 tmp/
