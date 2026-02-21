@@ -197,7 +197,7 @@ if [ -f "$HOME/.gitconfig.local" ]; then
 
   # includeIf gitdir trailing slash 검증
   while IFS= read -r gitdir; do
-    if [[ ! "$gitdir" =~ /\"$ ]]; then
+    if [[ ! "$gitdir" =~ /\"\]$ ]]; then
       dir="${gitdir#*\"gitdir:}"
       dir="${dir%\"*}"
       fail "includeIf gitdir에 trailing slash 누락: $dir"
@@ -208,7 +208,7 @@ else
 fi
 
 if ! is_profile "server"; then
-  signing_key=$(git config --global user.signingKey 2>/dev/null)
+  signing_key=$(git config --global --includes user.signingKey 2>/dev/null)
   if [ -n "$signing_key" ]; then
     pass "서명 키 설정됨"
   else
