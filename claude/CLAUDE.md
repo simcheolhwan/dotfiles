@@ -23,6 +23,7 @@
 
 ### Linear
 
+- Writing style: Easy to scan. Prefer simplicity and plain words.
 - Team: Required field. If unspecified, infer from context and propose to the user — must be approved.
 - Priority, Project, Label, etc.: If unspecified, infer from context and propose — must be approved.
 - Assignee: Default to the user (simcheolhwan) if unspecified. Never leave assignee empty.
